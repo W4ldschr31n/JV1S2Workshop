@@ -3,10 +3,6 @@
 # Déclarez sous cette ligne les images, avec l'instruction 'image'
 # ex: image eileen heureuse = "eileen_heureuse.png"
 
-# Déclarez les personnages utilisés dans le jeu.
-define e = Character('Eileen', color="#c8ffc8")
-
-
 # Le jeu commence ici
 label start:
 
@@ -15,5 +11,14 @@ label start:
     e "Après avoir ajouté une histoire, des images et de la musique, vous pourrez le présenter au monde entier !"
 
     e " bonjours j'aime la prog"
+
+    menu optional_name:
+        "Que voulez-vous faire?"
+        "Jouer au chapitre 1":
+            jump chapter_1
+        "Test (Nicolas)":
+            jump test_nicolas
+        "Test (Felix)":
+            jump test_felix       
 
     return
