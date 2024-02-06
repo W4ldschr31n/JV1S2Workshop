@@ -5,7 +5,7 @@
 
 # Le jeu commence ici
 label start:
-
+    $ jean_inventory = []
     menu optional_name:
         "Que voulez-vous faire?"
         "Jouer au chapitre 1":
