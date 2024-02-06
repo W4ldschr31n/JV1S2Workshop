@@ -1,37 +1,38 @@
-#$ jean_inventory = []
-#
-#    $ tome = Item ("tome","Tome.png")
-#    show screen inventory
-
-
-
-screen coucou:
-    frame:
-        xpos 20
-        ypos 20
-        text "coucou":
-            size 40
-        
-screen fromage:
-    imagebutton:
-        xpos 190
-        ypos 450
-        idle "Tome.png"
-        at custom_zoom
-        action [Hide("coucou"),Jump ("tomeclic")]
-
 transform custom_zoom:
     zoom 0.2
+transform custom_zoom2:
+    zoom 0.1
+
+
+
+screen choixguit:
+    imagebutton:
+        xpos 200
+        ypos 200
+        idle "guitare1.png"
+        at custom_zoom2
+        action Jump("choix1")
+
+    #imagebutton:
+    #    xpos 600
+    #    ypos 200
+    #    idle "guitare2.png"
+    #    at custom_zoom2
+    #    action Jump ("choix2")
+#
+    #imagebutton:
+    #    xpos 1000
+    #    ypos 200
+    #    idle "guitare3.png"
+    #    at custom_zoom2
+    #    action Jump ("choix3")
+#
 
 
 screen inventory:
     hbox:
-        for i in jean_inventory:
+        for i in guit_inventory:
             frame:
                 add i.image
 
 
-label tomeclic:
-    $ jean_inventory.append(tome)
-
-    narrateur "bravo tu a trouvé la tome"

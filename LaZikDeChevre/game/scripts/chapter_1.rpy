@@ -1,3 +1,9 @@
+init python:
+    class Item:
+        def __init__(self,name,image):
+            self.name = name
+            self.image = image
+
 define narrateur = Character ("  ")
 define journaliste = Character ("journaliste")
 define john = Character ("John")
@@ -5,9 +11,11 @@ define jean = Character ("Jean")
 define gerant = Character ("Gerant")
 define patrick = Character ("Patrick")
 define organisateur = Character("Organisateur")
+define petrisseur = Character("Petrisseur")
 
 label chapter_1:
-
+    
+    
     scene frometon
     narrateur "En france ..."
 
@@ -125,15 +133,15 @@ label prestabar:
     show jean grand
 
     narrateur "Nous retrouvons Jean au bar"
-    #rythme 2
+    #rythme bar
     menu :
         "jeux rythme 2 win ?"
         "oui":
             $ winjeu2=True
         "non":
-            $ losejeu2=False
+            $ winjeu2=False
 
-    if gerantcontent:
+    if winjeu2:
         jump winjeu2
     else:
         jump losejeu2
@@ -159,13 +167,91 @@ label prestabar:
         narrateur "Un show....existant"
         organisateur "J'ai repéré un certain potentiel en lui"
         narrateur "La chance semble enfin sourire à"
+        hide jean
+        hide maison
         jump guitare
 
 label rue:
     scene rue
-    
+    show jean:
+        xalign 1.0
+        yalign 1.0
+    show gerant:
+        xalign 0.0
+        yalign 1.0
+    gerant "Très drôle ! Aller, retourne jouer ailleurs. Tu me fais perdre mon temps."
+    jean "Mais..c'est mon rêve ! Vous allez vraiment me refuser ça comme ça ?!" 
+    gerant "Oui."
+    narrateur "C'est sur ces dernières"
+
+    scene backstage
+    show john
+
+    john "ah..."
+    narrateur "Mais en ..."
+
+    #jeux de rythme rue
+    menu :
+        "jeux rythme rue win ?"
+        "oui":
+            $ winjeu3=True
+        "non":
+            $ winjeu3=False
+
+    if winjeu3:
+        jump winjeu3
+    else:
+        jump losejeu3
+
+    label winjeu3:
+        journaliste "Une performance ..."
+        jean "C'etait magique ..."
+        journaliste "La chance..."
+        narrateur "Jean nous..."
+        jump guitare
+
+    label losejeu3:
+        narrateur "Un fiasco..."
+        jump findrogue
 
 
+label findrogue:
+
+label guitare:
+    $ guit_inventory = []
+    $ guitrouge = Item ("guitare1","guitare1.png")
+    show screen inventory
+
+
+    scene maison
+    show john
+    narrateur "Nous retrouvons ensuite..."
+    john "Il va te falloir..."
+    hide john
+    scene journal:
+        zoom 3
+    call screen choixguit
+
+label choix1:
+    $ guit_inventory.append(guitrouge)
+    narrateur "ouai la meilleur"
+    jump festival
+
+label festival:
+    scene festival debut
+    show jean
+    narrateur "Nous retrouvons..."
+    jean "Vous vous..."
+    journaliste "Cela ..."
+    jean "Je sais garder..."
+    narrateur "Nous laissons..."
+    hide jean
+    show petrisseur
+    journaliste "Monsieur..."
+    petrisseur "Non..."
+    narrateur "C'est sur ..."
+
+#jeu correspondance
 
 
 
