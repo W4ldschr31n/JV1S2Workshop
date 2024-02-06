@@ -14,7 +14,7 @@ label test_nicolas:
 
 
 label test_persuasion:
-    call persuasion(choix_persuation_gerant, g, "gerant", 100)
+    call persuasion(persuasion_tree_gerant, g, "gerant", 100)
     if persuasion_win:
         jump persuasion_gerant_succes
     else:
