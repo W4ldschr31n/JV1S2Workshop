@@ -13,7 +13,7 @@ init python:
             self.speed = speed
             self.timerStart = timerStart
             self.show = manager.create(sprite)
-            self.show.x = -50
+            self.show.x = -64
             self.show.y = Y_GUITAR
             self.moving = False
             
@@ -41,7 +41,7 @@ init python:
     def sprites_update(st):
         for sprite in notes[:]:
             sprite.update()
-            if sprite.x > 1500:
+            if sprite.x > X_GUITAR + 40:
                 sprite.show.destroy()
                 notes.remove(sprite)
                 store.misses += 1
@@ -51,20 +51,22 @@ init python:
         if ev.type == MOUSEBUTTONDOWN and ev.button == 1:
             for sprite in notes[:]:
                 if sprite.moving:
-                    if X_GUITAR - 20 <= int(sprite.x) <= X_GUITAR + 20:
+                    if X_GUITAR - 40 <= int(sprite.x) <= X_GUITAR + 40:
                         store.hits += 1
                         sprite.show.destroy()
                         notes.remove(sprite)
                         break
             else:
                 store.misses += 1
+                notes[0].show.destroy()
+                notes.pop(0)
         renpy.restart_interaction()
         if not notes:
-            return  hits > misses
+            return True
 
-    note1 = Text("A")
-    note2 = Text("B")
-    note3 = Text("C")
+    note1 = Image("note1.png")
+    note2 = Image("note2.png")
+    note3 = Image("note3.png")
 
     speedRythme1 = 20
     frequenceFast = 0.3
@@ -72,23 +74,27 @@ init python:
     frequenceSlow = 1.0
     
 define sequenceRythme1 = [
+    (note3, frequenceFast),
+    (note3, frequenceFast),
     (note1, frequenceSlow),
     (note1, frequenceSlow),
     (None, 2),
-    (note1, frequenceMedium),
+    (note2, frequenceMedium),
     (note1, frequenceSlow),
     (None, 3),
-    (note1, frequenceFast),
-    (note1, frequenceFast),
-    (note1, frequenceFast),
+    (note3, frequenceFast),
+    (note3, frequenceFast),
+    (note3, frequenceFast),
 ]
 screen screen_minigame_rythme:
     text "Réussi: [hits], Raté: [misses]!" xalign 0.5
-    text "A":
-        pos (X_GUITAR, Y_GUITAR)
-    text [str(len(notes))] xalign 0.2
+    text ["Notes restantes "+str(len(notes))] xalign 0.5 yalign 0.1
+    add "guitare.png" xalign 0.5 yalign 0.5
+    frame:
+        area (X_GUITAR-40, Y_GUITAR-100, 80, 200)
 
-label minigame_rythme(sequence):
+
+label minigame_rythme(sequence, difficulte):
     python:
         hits = 0
         misses = 0
@@ -108,10 +114,18 @@ label minigame_rythme(sequence):
         $ result = ui.interact()
     hide screen screen_minigame_rythme
     hide _
-    jump fin_rythm
+    $ accuracy = round(hits* 100 / (hits+misses), 2)
+    call fin_rythm(accuracy, difficulte)
 
-label fin_rythm:
-    pause 1
+    return
+
+label fin_rythm(accuracy, difficulte):
+    ""
+    "Précision : [accuracy]\%"
+    image fini = ConditionSwitch("accuracy > 70 + difficulte", "bigwin.jpg", "accuracy > 50 + difficulte", "smallwin.jpg", "True", "lose.jpg")
+    scene fini with fade
+    pause 3
+    hide fini
     g "allo"
     g "oskour"
     return

@@ -31,5 +31,5 @@ label persuasion_gerant_succes:
     return
 
 label test_rythme:
-    call minigame_rythme(sequenceRythme1)
+    call minigame_rythme(sequenceRythme1, 0)
     "A plus"
