@@ -6,12 +6,6 @@
 # Le jeu commence ici
 label start:
 
-    e "Vous venez de créer un nouveau jeu Ren'Py."
-
-    e "Après avoir ajouté une histoire, des images et de la musique, vous pourrez le présenter au monde entier !"
-
-    e " bonjours j'aime la prog"
-
     menu optional_name:
         "Que voulez-vous faire?"
         "Jouer au chapitre 1":
@@ -19,6 +13,8 @@ label start:
         "Test (Nicolas)":
             jump test_nicolas
         "Test (Felix)":
-            jump test_felix       
+            jump test_felix    
+        "bar":
+            jump bar
 
     return
