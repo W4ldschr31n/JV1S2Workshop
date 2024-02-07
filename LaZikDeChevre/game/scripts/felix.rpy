@@ -79,6 +79,17 @@ screen gradin:
         ypos 500
         action Jump ("gradin")
 
+#screen party:
+#    textbutton "vers le concnert ":
+#        background "black"
+#        xpos 900
+#        ypos 100
+#        action Call ("validation")
+
+#label validation:
+
+
+
 screen cable:
     imagebutton:
         idle "cable.png"
@@ -88,6 +99,8 @@ label recup_inventory:
     $ guit_inventory.append(cable)
     $ cable_recupere = True
     return
+
+
     
 
     

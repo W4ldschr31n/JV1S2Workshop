@@ -5,6 +5,7 @@ init python:
             self.image = image
 
 default cable_recupere = False
+#default verif = False
 
 define narrateur = Character ("  ",what_italic=True)
 define journaliste = Character ("journaliste",color="#7714d3")
