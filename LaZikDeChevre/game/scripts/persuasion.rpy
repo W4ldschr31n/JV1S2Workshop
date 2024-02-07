@@ -1,46 +1,46 @@
 init python:
-    PersuasionChoice = renpy.namedtuple("PersuasionChoice", ["question", "answer", "points"])
+    PersuasionChoice = renpy.namedtuple("PersuasionChoice", ["question", "answer", "points", "next_branch"])
+    END_BRANCH = -1
     class PersuasionTree:
-        def __init__(self, branches):
-            self.all_branches = branches
-            self.profondeur = 0
-            self.alignement = "neutral"
+        def __init__(self, indexed_branches, contextual_choice=None):
+            self.indexed_branches = indexed_branches
+            self.current_branch = 0
+            self.contextual_choice = contextual_choice
 
         def get_choices(self):
-            return self.all_branches[self.profondeur][self.alignement] if self.has_choices() else []
+            if not self.has_choices():
+                return []
+
+            choices = self.indexed_branches[self.current_branch]
+
+            if self.contextual_choice is not None:
+                return choices + [self.contextual_choice]
+
+            return choices 
 
         def select_choice(self, choice):
-            if choice.points < 0:
-                self.alignement = "negative"
-                self.profondeur += 1
-            elif choice.points > 0:
-                self.alignement = "positive"
-                self.profondeur += 1
+            if choice == self.contextual_choice:
+                self.current_branch = self.current_branch if self.contextual_choice.next_branch != END_BRANCH else END_BRANCH
+                self.contextual_choice = None
             else:
-                self.get_choices().remove(choice)
+                self.current_branch = choice.next_branch
+                if choice.points == 0:
+                    self.get_choices().remove(choice)
 
         def has_choices(self):
-            return self.profondeur < len(self.all_branches)
+            return self.current_branch != END_BRANCH
 
-define persuasion_tree_gerant = PersuasionTree([
-    {"neutral": [PersuasionChoice("Salut", "Bien le bonjour", 0), PersuasionChoice("Bon toutou", "Non mais oh !", -25), PersuasionChoice("Aidez-moi svp", "Avec plaisir", 30)]},
-    {
-        "positive": [PersuasionChoice("Je vous souhaite une bonne journée", "Au revoir", 0), PersuasionChoice("Donne ton fric", "Jamais de la vie", -25), PersuasionChoice("J'aimerais collaborer avec vous", "Bien sûr !", 30)],
-        "negative": [PersuasionChoice("Adios raclure", "Ne reviens jamais", -10), PersuasionChoice("Milles excuses", "Mouais", 0), PersuasionChoice("J'aimerais collaborer avec vous", "Et pourquoi j'accepterais ?", 10)]
-    },
-])
-
-define max_persuasion_points = 100
+default max_persuasion_points = 100
 
 label persuasion(pt, character, character_image):
-    "J'essaye de persuader [character.name]"
-    "Je dois atteindre [max_persuasion_points] points de persuasion"
+    "Vous allez essayer de persuader [character.name]"
+    "Vous devez faire monter la barre de persuasion en choisissant les bons dialogues !"
     $ current_points = 50
     $ character_to_persuade = character
     $ persuasion_tree = pt
     show screen persuasion_bar
     show expression character_image as char_im
-    character_to_persuade "Alors ça vient?"
+    character_to_persuade "Je vous écoute"
 
     jump persuasion_loop
 

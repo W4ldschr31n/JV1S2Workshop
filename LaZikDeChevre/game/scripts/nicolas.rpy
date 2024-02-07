@@ -17,21 +17,7 @@ label test_nicolas:
 
 
 label test_persuasion:
-    call persuasion(persuasion_tree_gerant, g, "gerant", 100)
-    if persuasion_win:
-        jump persuasion_gerant_succes
-    else:
-        jump persuasion_gerant_fail
-
-label persuasion_gerant_fail:
-    show gerant angry
-    g "tu vas souffrir"
-    return
-
-label persuasion_gerant_succes:
-    show gerant happy
-    g "ça passe pour aujourd'hui"
-    return
+    jump persuasion_gerant
 
 label test_rythme:
     call minigame_rythme(sequenceRythme1, 0)
