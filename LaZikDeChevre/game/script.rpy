@@ -17,6 +17,8 @@ label start:
         "Test (Baptiste)":
             jump test_corres
         "bar":
-            jump bar
+            jump bar 
+        "choix guitar":
+            jump guitare
 
     return
