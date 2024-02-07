@@ -131,8 +131,15 @@ label minigame_rythme(sequence, difficulte):
 label fin_rythm(accuracy, difficulte):
     ""
     "Précision : [accuracy]\%"
-    image fini = ConditionSwitch("accuracy > 70 + difficulte", "bigwin.jpg", "accuracy > 50 + difficulte", "smallwin.jpg", "True", "lose.jpg")
-    scene fini with fade
+    if accuracy > 70 + difficulte:
+        $ score_minigame_rythme = 3
+    elif accuracy > 50 + difficulte:
+        $ score_minigame_rythme = 2
+    else:
+        $ score_minigame_rythme = 1
+
+    image fini = ConditionSwitch("score_minigame_rythme==3", "bigwin.jpg", "score_minigame_rythme==2", "smallwin.jpg", "True", "lose.jpg")
+    show fini with fade
     pause 3
     hide fini
     g "allo"

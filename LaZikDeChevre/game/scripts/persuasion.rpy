@@ -30,11 +30,12 @@ define persuasion_tree_gerant = PersuasionTree([
     },
 ])
 
-label persuasion(pt, character, character_image, target_points):
+define max_persuasion_points = 100
+
+label persuasion(pt, character, character_image):
     "J'essaye de persuader [character.name]"
-    "Je dois atteindre [target_points] points de persuasion"
+    "Je dois atteindre [max_persuasion_points] points de persuasion"
     $ current_points = 50
-    $ max_points = target_points
     $ character_to_persuade = character
     $ persuasion_tree = pt
     show screen persuasion_bar
@@ -49,7 +50,7 @@ label persuasion_loop:
     if persuasion_tree.has_choices():
         jump persuasion_loop
     else:
-        $ persuasion_win = current_points >= max_points
+        $ persuasion_win = current_points >= 50
         hide char_im
         return
 
@@ -59,11 +60,17 @@ label .choice_persuasion(choices):
         choice = renpy.display_menu(menu_options)
         current_points += choice.points
         persuasion_tree.select_choice(choice)
-    character_to_persuade "[choice.answer]"
+    if choice.points < 0:
+        show expression character_image + " angry" as char_im
+    elif choice.points > 0:
+        show expression character_image + " happy" as char_im
+    else:
+        show expression character_image as char_im
+    character_to_persuade  "[choice.answer]"
     return
 
 screen persuasion_bar():
     frame:
         hbox:
             vbar:
-                value AnimatedValue(current_points, max_points)
+                value AnimatedValue(current_points, max_persuasion_points)
