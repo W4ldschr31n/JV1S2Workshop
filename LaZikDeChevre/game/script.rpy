@@ -13,7 +13,9 @@ label start:
         "Test (Nicolas)":
             jump test_nicolas
         "Test (Felix)":
-            jump test_felix    
+            jump test_felix
+        "Test (Baptiste)":
+            jump test_corres
         "bar":
             jump bar
 
