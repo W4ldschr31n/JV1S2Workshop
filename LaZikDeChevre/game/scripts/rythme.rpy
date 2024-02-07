@@ -1,14 +1,14 @@
 init python:
     config.screen_width=1920
     config.screen_height=1080
-    X_GUITAR = 1000
+    X_GUITAR = 960
     Y_GUITAR = 500
     import time
     import pygame
     MOUSEBUTTONDOWN=pygame.MOUSEBUTTONDOWN
     
     class MiniGameRythmNote:
-        def __init__(self, sprite, speed, timerStart):
+        def __init__(self, sprite, speed, timerStart, isGood):
             self.sprite = sprite
             self.speed = speed
             self.timerStart = timerStart
@@ -16,6 +16,7 @@ init python:
             self.show.x = -64
             self.show.y = Y_GUITAR
             self.moving = False
+            self.isGood = isGood
             
         def update(self):
             if store.t + self.timerStart < time.time():
@@ -42,9 +43,12 @@ init python:
         for sprite in notes[:]:
             sprite.update()
             if sprite.x > X_GUITAR + 40:
+                if sprite.isGood:
+                    store.misses += 1
+                else:
+                    store.hits += 1
                 sprite.show.destroy()
                 notes.remove(sprite)
-                store.misses += 1
         return 0.05
         
     def sprites_event(ev, x, y, st):
@@ -52,14 +56,19 @@ init python:
             for sprite in notes[:]:
                 if sprite.moving:
                     if X_GUITAR - 40 <= int(sprite.x) <= X_GUITAR + 40:
-                        store.hits += 1
+                        if sprite.isGood:
+                            store.hits += 1
+                        else:
+                            store.misses += 1
                         sprite.show.destroy()
                         notes.remove(sprite)
                         break
             else:
                 store.misses += 1
-                notes[0].show.destroy()
-                notes.pop(0)
+                # nearly hit
+                if notes[0].x >= X_GUITAR - 100:
+                    notes[0].show.destroy()
+                    notes.pop(0)
         renpy.restart_interaction()
         if not notes:
             return True
@@ -67,6 +76,7 @@ init python:
     note1 = Image("note1.png")
     note2 = Image("note2.png")
     note3 = Image("note3.png")
+    note4 = Image("note4.png")
 
     speedRythme1 = 20
     frequenceFast = 0.3
@@ -74,20 +84,22 @@ init python:
     frequenceSlow = 1.0
     
 define sequenceRythme1 = [
-    (note3, frequenceFast),
-    (note3, frequenceFast),
-    (note1, frequenceSlow),
-    (note1, frequenceSlow),
-    (None, 2),
-    (note2, frequenceMedium),
-    (note1, frequenceSlow),
-    (None, 3),
-    (note3, frequenceFast),
-    (note3, frequenceFast),
-    (note3, frequenceFast),
+    (note3, frequenceFast, True),
+    (note3, frequenceFast, True),
+    (note1, frequenceSlow, True),
+    (note4, frequenceFast, False),
+    (note1, frequenceSlow, True),
+    (None, 2, True),
+    (note2, frequenceMedium, True),
+    (note1, frequenceSlow, True),
+    (None, 3, True),
+    (note3, frequenceFast, True),
+    (note4, frequenceFast, False),
+    (note3, frequenceFast, True),
+    (note3, frequenceFast, True),
 ]
 screen screen_minigame_rythme:
-    text "Réussi: [hits], Raté: [misses]!" xalign 0.5
+    text "Réussi: [hits], Raté: [misses]" xalign 0.5
     text ["Notes restantes "+str(len(notes))] xalign 0.5 yalign 0.1
     add "guitare.png" xalign 0.5 yalign 0.5
     frame:
@@ -106,7 +118,7 @@ label minigame_rythme(sequence, difficulte):
         for step in sequenceRythme1:
             timerStart += step[1]
             if step[0] is not None:
-                notes.append(MiniGameRythmNote(step[0], speedRythme1, timerStart))
+                notes.append(MiniGameRythmNote(step[0], speedRythme1, timerStart, step[2]))
         renpy.show_screen("screen_minigame_rythme")
         renpy.show("_", what=manager, zorder=1)
         
