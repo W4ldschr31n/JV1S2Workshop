@@ -10,6 +10,8 @@ label test_nicolas:
             jump test_persuasion
         "Rythme":
             jump test_rythme
+        "Dodge":
+            jump test_dodge
     
 
 
@@ -33,3 +35,7 @@ label persuasion_gerant_succes:
 label test_rythme:
     call minigame_rythme(sequenceRythme1, 0)
     "A plus"
+
+label test_dodge:
+    call minigame_dodge()
+    "Dans le bus"

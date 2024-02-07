@@ -1,6 +1,4 @@
 init python:
-    config.screen_width=1920
-    config.screen_height=1080
     X_GUITAR = 960
     Y_GUITAR = 500
     import time
@@ -122,8 +120,7 @@ label minigame_rythme(sequence, difficulte):
         renpy.show_screen("screen_minigame_rythme")
         renpy.show("_", what=manager, zorder=1)
         
-    while notes:
-        $ result = ui.interact()
+        ui.interact()
     hide screen screen_minigame_rythme
     hide _
     $ accuracy = round(hits* 100 / (hits+misses), 2)
