@@ -125,7 +125,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## Contrôle la vitesse du texte. La valeur par défaut, 0, est infinie. Toute
 ## autre valeur est le nombre de caractères tapés par seconde.
 
-default preferences.text_cps = 0
+default preferences.text_cps = 25
 
 
 ## Le délai d’avancée automatique. Des nombres importants entraînent une longue

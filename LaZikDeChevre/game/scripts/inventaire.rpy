@@ -137,7 +137,7 @@ label validation:
         A peine avons-nous eu le temps de souffler que Rocklette entre en scène confiant, et sans un mot entame sa prestation. "
         jump concert_stade
     else :
-        narrateur "Il vous manque des objet"
+        narrateur "Il vous manque des objets, il vous faut un câble, un médiator et un micro."
         $ print(salle_actuelle)
         $ renpy.jump(salle_actuelle)
 

@@ -56,7 +56,7 @@ label post_corres :
 
     scene festival
 
-    narrateur "Après tant de préparation et d'appréhension, ça y est, c'est le grand moment pour Jean qui monte sur scène."
+    narrateur "{cps=25}Après tant de préparation et d'appréhension, ça y est, c'est le grand moment pour Jean qui monte sur scène."
 
     default result_festival = 0
 
@@ -72,43 +72,43 @@ label post_corres :
     label winjeu4:
         show jean at center:
             zoom 0.3
-        narrateur "Une mine dépitée, le visage surpris, et un exploit dont le Petrisseur ne s'attendait pas. Depuis 2 ans, c'est à lui que revenait le monopole de la scène du Rockbihan, désormais, 
+        narrateur "{cps=25}Une mine dépitée, le visage surpris, et un exploit dont le Petrisseur ne s'attendait pas. Depuis 2 ans, c'est à lui que revenait le monopole de la scène du Rockbihan, désormais, 
         il semblerait qu'une nouvelle star fasse son apparition. Ce n'est plus lui que la foule acclame, mais bel et bien Jean qui lui non plus n'en revient pas. Nous le retrouvons, bouche bée, derrière la scène. "
-        journaliste "Bonsoir Jean ! Quel spectacle vous nous avez offert ce soir. C'était comme diraient les jeunes: un banger. Comment avez-vous vécu ce moment avec toutes ces personnes réunies pour vous entendre?"
-        jean "Tout va tellement vite! J'arrive pas à y croire: c'est vraiment incroyable. J'ai du mal à réaliser que ce moment n'est plus qu'un rêve. C'est ça qu'on appelle le destin ?"
+        journaliste "{cps=25}Bonsoir Jean ! Quel spectacle vous nous avez offert ce soir. C'était comme diraient les jeunes: un banger. Comment avez-vous vécu ce moment avec toutes ces personnes réunies pour vous entendre?"
+        jean "{cps=25}Tout va tellement vite! J'arrive pas à y croire: c'est vraiment incroyable. J'ai du mal à réaliser que ce moment n'est plus qu'un rêve. C'est ça qu'on appelle le destin ?"
         show jean trepigne at center:
             zoom 0.3
-        narrateur "Un homme surpris de sa montée folle. Des spectateurs qui le sont encore plus.  Nous laissons Jean se reposer un peu, et décidons d'aller à la rencontre du Petrisseur. 
+        narrateur "{cps=25}Un homme surpris de sa montée folle. Des spectateurs qui le sont encore plus.  Nous laissons Jean se reposer un peu, et décidons d'aller à la rencontre du Petrisseur. 
         L'homme semble être dans un piteux état."
-        journaliste "Monsieur le Petrisseur, comment vivez-vous cet instant? Vous sentez-vous trahi par vos fans? Comptez-vous soutenir cette étoile montante?"
+        journaliste "{cps=25}Monsieur le Petrisseur, comment vivez-vous cet instant? Vous sentez-vous trahi par vos fans? Comptez-vous soutenir cette étoile montante?"
         hide jean trepigne
         show petrisseur angry at center:
             yalign 1
             zoom 0.5
 
-        petrisseur "C'est à MOI que ces applaudissements reviennent !! MOI ET PERSONNE D'AUTRE !! Stupidités !  Je n'ai rien à envier à ce fromager de pacotille ! 
+        petrisseur "{cps=25}C'est à MOI que ces applaudissements reviennent !! MOI ET PERSONNE D'AUTRE !! Stupidités !  Je n'ai rien à envier à ce fromager de pacotille ! 
         Jamais il ne me surpassera, il en est incapable ! Que ce gueux retourne d'où il vienne: dans le purin et la moisissure."
-        narrateur "L'homme part sur ces mots. Comme un lointain souvenir, des images nous reviennent: celles d'un ado fils de boulanger et prêt à tout pour intégrer le monde du rock. 
+        narrateur "{cps=25}L'homme part sur ces mots. Comme un lointain souvenir, des images nous reviennent: celles d'un ado fils de boulanger et prêt à tout pour intégrer le monde du rock. 
         En effet, quelques années auparavent, nous avions rencontré Viktor, alias le Petrisseur, dans sa petite boulangerie de Sologne."
         jump flashback 
 
     label losejeu4:
         show petrisseur moqueur at center:
             zoom 0.3
-        narrateur "Nous retrouvons les deux rivaux principaux de la scène en plein milieu d'un conflit explosif."
-        petrisseur "Quelle honte tu nous fais ! T'aurais jamais du monter sur scène. Ta musique pue comme ton fromage."
+        narrateur "{cps=25}Nous retrouvons les deux rivaux principaux de la scène en plein milieu d'un conflit explosif."
+        petrisseur "{cps=25}Quelle honte tu nous fais ! T'aurais jamais du monter sur scène. Ta musique pue comme ton fromage."
         show petrisseur hautain at left:
             zoom 0.3
         show jean sad at right:
             zoom 0.3
-        jean "Eh ! Tu me parles pas comme ça hein. Tout le monde peut se foirer à un moment ou un autre, et t'es pas différent !"
-        petrisseur "Je ne suis pas un raté comme toi ! J'ai réussi moi ! Voila ce qui arrive quand tu défies le roi, le PETRISSEUR."
-        narrateur "Après cette altercation, Jean semble déboussolé et demande à être seul. Nous nous éloignons donc, et retrouvons son rival. 
+        jean "{cps=25}Eh ! Tu me parles pas comme ça hein. Tout le monde peut se foirer à un moment ou un autre, et t'es pas différent !"
+        petrisseur "{cps=25}Je ne suis pas un raté comme toi ! J'ai réussi moi ! Voila ce qui arrive quand tu défies le roi, le PETRISSEUR."
+        narrateur "{cps=25}Après cette altercation, Jean semble déboussolé et demande à être seul. Nous nous éloignons donc, et retrouvons son rival. 
         Le Petrisseur rit aux éclats, fier de sa victoire: comme un adulte ayant battu un enfant à la course. "
-        petrisseur "Il était pas fait pour ça. Soit t'as le rock dans le sang, soit tu l'as pas. Faut vraiment que des gens arrêtent de prendre 
+        petrisseur "{cps=25}Il était pas fait pour ça. Soit t'as le rock dans le sang, soit tu l'as pas. Faut vraiment que des gens arrêtent de prendre 
         exemple sur moi en pensant qu'ils peuvent réussir: je suis l'exception, l'élu."
-        narrateur "C'est sur ces paroles que nous quittons la vedette afin de rejoindre Jean qui se tient quelques mètres plus loin, pensif, l'air abattu."
+        narrateur "{cps=25}C'est sur ces paroles que nous quittons la vedette afin de rejoindre Jean qui se tient quelques mètres plus loin, pensif, l'air abattu."
         scene fromagerie
-        narrateur "C'est uniquement quelques mois plus tard que des nouvelles de Jean nous parviendrons. Nous le retrouvons aujourd'hui dans la fromagerie de son père."
+        narrateur "{cps=25}C'est uniquement quelques mois plus tard que des nouvelles de Jean nous parviendrons. Nous le retrouvons aujourd'hui dans la fromagerie de son père."
         show jean
         jump fin_rival
