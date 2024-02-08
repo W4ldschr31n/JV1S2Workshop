@@ -102,7 +102,7 @@ label minigame_rythme(sequence, difficulte, speedRythme):
         for step in sequence:
             timerStart += step[2]
             if step[0] is not None:
-                notes.append(MiniGameRythmNote(step[0], step[1], speedRythme, timerStart, step[2]))
+                notes.append(MiniGameRythmNote(step[0], step[1], speedRythme, timerStart, step[3]))
         renpy.show_screen("screen_minigame_rythme")
         renpy.show("_", what=manager, zorder=1)
         
