@@ -289,20 +289,20 @@ screen drag_drop:
 label drag_win:
 
     scene backstage
-    show jean heureux at center:
+    show jean happy at center:
         zoom 0.3
     narrateur "Jean ne succombat pas au stress et réussit à installer son matèriel à temps"
 
-    # jump suite
+    jump post_corres
 
 label drag_lose:
 
     scene backstage
-    show jean triste at center:
+    show jean sad at center:
         zoom 0.3
     narrateur "Jean succombat au stress, il ne réussit pas à installer son matèriel à temps. Nous esperons que cela n'impactera pas trop sa perfomance"
 
-    # jump suite  
+    jump post_corres
 
 label test_corres:
     $ remaining_timer = 25

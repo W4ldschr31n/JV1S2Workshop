@@ -22,7 +22,7 @@ label festival:
     narrateur "Nous retrouvons Jean chez lui, quelques heures avant le début du festival. Le trac est présent mais ne semble pas égaler son excitation."
     jean "Vous vous rendez compte ? Depuis le temps que j'en rêve ! C'est une occasion qui ne se représentera pas de sitôt alors je veux donner mon maximum. Pas question que j'oublie mon matos."
     journaliste "Cela ne vous fait pas peur de passer d'un petit bar à une scène plus grande ? C'est un changement drastique qui pourrait en rendre malade plus d'un."
-    show jean heureux at center:
+    show jean happy at center:
         zoom 0.3
     jean "Je sais garder la tête froide, j'dois tenir ça de mon père et de ses fromages. J'veux surtout pas gâcher ma chance. Bon, vous pourriez me laisser le temps que je finisse de me préparer?"
     narrateur "Nous laissons donc Jean à ses occupations."
@@ -39,7 +39,12 @@ label festival:
     À la tombée de la nuit, nous retrouvons une fois de plus notre artiste en herbe en train de se préparer. Concentré, aucun détail ne lui échappe."
     hide petrisseur
     
-    #jump test_corres
+    call test_corres
+
+
+label post_corres :
+
+    scene festival
 
     narrateur "Après tant de préparation et d'appréhension, ça y est, c'est le grand moment pour Jean qui monte sur scène."
 
@@ -71,26 +76,29 @@ label festival:
             yalign 1
             zoom 0.5
 
-        petrisseur "C'est a moi..."
-        narrateur "L'homme..."
+        petrisseur "C'est à MOI que ces applaudissements reviennent !! MOI ET PERSONNE D'AUTRE !! Stupidités !  Je n'ai rien à envier à ce fromager de pacotille ! 
+        Jamais il ne me surpassera, il en est incapable ! Que ce gueux retourne d'où il vienne: dans le purin et la moisissure."
+        narrateur "L'homme part sur ces mots. Comme un lointain souvenir, des images nous reviennent: celles d'un ado fils de boulanger et prêt à tout pour intégrer le monde du rock. 
+        En effet, quelques années auparavent, nous avions rencontré Viktor, alias le Petrisseur, dans sa petite boulangerie de Sologne."
         jump flashback 
 
     label losejeu4:
-        show petrisseur:
-            xalign 0.0
-            yalign 1.0
+        show petrisseur moqueur at center:
+            zoom 0.3
         narrateur "Nous retrouvons les deux rivaux principaux de la scène en plein milieu d'un conflit explosif."
         petrisseur "Quelle honte tu nous fais ! T'aurais jamais du monter sur scène. Ta musique pue comme ton fromage."
-        show jean:
-            xalign 1.0
-            yalign 1.0
+        show petrisseur hautain at left:
+            zoom 0.3
+        show jean sad at right:
+            zoom 0.3
         jean "Eh ! Tu me parles pas comme ça hein. Tout le monde peut se foirer à un moment ou un autre, et t'es pas différent !"
         petrisseur "Je ne suis pas un raté comme toi ! J'ai réussi moi ! Voila ce qui arrive quand tu défies le roi, le PETRISSEUR."
-        narrateur "Après.."
-        petrisseur "Il etait.."
-        narrateur "C'est..."
+        narrateur "Après cette altercation, Jean semble déboussolé et demande à être seul. Nous nous éloignons donc, et retrouvons son rival. 
+        Le Petrisseur rit aux éclats, fier de sa victoire: comme un adulte ayant battu un enfant à la course. "
+        petrisseur "Il était pas fait pour ça. Soit t'as le rock dans le sang, soit tu l'as pas. Faut vraiment que des gens arrêtent de prendre 
+        exemple sur moi en pensant qu'ils peuvent réussir: je suis l'exception, l'élu."
+        narrateur "C'est sur ces paroles que nous quittons la vedette afin de rejoindre Jean qui se tient quelques mètres plus loin, pensif, l'air abattu."
         scene fromagerie
-        narrateur "Revetu.."
+        narrateur "C'est uniquement quelques mois plus tard que des nouvelles de Jean nous parviendrons. Nous le retrouvons aujourd'hui dans la fromagerie de son père."
         show jean
-        jean "Vous..."
         jump fin_rival
