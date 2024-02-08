@@ -6,8 +6,7 @@
     def dragged_func(dragged_items, dropped_on):
         if dropped_on is not None:
             if dragged_items[0].drag_name == dropped_on.drag_name:
-                dragged_items[0].snap(dropped_on.x - 50, dropped_on.y - 50, 0.5)
-                dragged_items[0].set_child(Solid(("#ff0000"), xysize = (250, 250)))
+                dragged_items[0].snap(dropped_on.x + 7, dropped_on.y + 25, 0.5)
                 dragged_items[0].draggable = False
                 isInRightPlace[dragged_items[0].drag_name] = True
 
@@ -24,7 +23,7 @@
                 
                 
 screen drag_drop:
-    image "bar moyen claire.png"
+    image "backstage.png"
 
 ############################### - timer - ################################# 
 
@@ -39,27 +38,27 @@ screen drag_drop:
 
             ### - Aspect - ###
 
-            align(0.2, 0.5)
-            image Solid("#ffda94") xysize(50, 100)
+            align(0.6, 0.8)
+            image "B-Carre.png"
 
             ### - Nom - ###
 
-            drag_name "Yellow"
+            drag_name "B-Carre"
 
             ### - Caractèristiques - ###
 
             drag_raise True
             dragged dragged_func
             draggable True
+            # drag_offscreen True
 
         ### -- ###
         drag:
         ### -- ###
 
-            align(0.4, 0.5)
-            image Solid("#1f9414") xysize(50, 100)
-
-            drag_name "Green"
+            align(0.5, 0.8)
+            image "B-Rond.png"
+            drag_name "B-Rond"
 
             drag_raise True
             dragged dragged_func
@@ -69,10 +68,10 @@ screen drag_drop:
         drag:
         ### -- ###
 
-            align(0.6, 0.5)
-            image Solid("#403dff") xysize(50, 100)
+            align(0.4, 0.8)
+            image "B-Triangle.png"
 
-            drag_name "Blue"
+            drag_name "B-Triangle"
 
             drag_raise True
             dragged dragged_func
@@ -82,10 +81,75 @@ screen drag_drop:
         drag:
         ### -- ###
 
-            align(0.8, 0.5)
-            image Solid("#ff94fa") xysize(50, 100)
+            align(0.8, 0.8)
+            image "G-Carre.png"
 
-            drag_name "Pink"
+            drag_name "G-Carre"
+
+            drag_raise True
+            dragged dragged_func
+            draggable True
+
+        ### -- ###
+        drag:
+        ### -- ###
+
+            align(0.3, 0.8)
+            image "G-Rond.png"
+
+            drag_name "G-Rond"
+
+            drag_raise True
+            dragged dragged_func
+            draggable True
+
+        ### -- ###
+        drag:
+        ### -- ###
+
+            align(0.1, 0.8)
+            image "G-Triangle.png"
+
+            drag_name "G-Triangle"
+
+            drag_raise True
+            dragged dragged_func
+            draggable True
+
+        ### -- ###
+        drag:
+        ### -- ###
+
+            align(0.2, 0.8)
+            image "R-Carre.png"
+
+            drag_name "R-Carre"
+
+            drag_raise True
+            dragged dragged_func
+            draggable True
+
+        ### -- ###
+        drag:
+        ### -- ###
+
+            align(0.9, 0.8)
+            image "R-Rond.png"
+
+            drag_name "R-Rond"
+
+            drag_raise True
+            dragged dragged_func
+            draggable True
+
+        ### -- ###
+        drag:
+        ### -- ###
+
+            align(0.7, 0.8)
+            image "R-Triangle.png"
+
+            drag_name "R-Triangle"
 
             drag_raise True
             dragged dragged_func
@@ -98,10 +162,32 @@ screen drag_drop:
         drag:
         ### -- ###
 
-            align(0.2, 0.2)
-            image Solid("#ffda94") xysize(50, 50)
+            align(0.1, 0.2)
+            image "NM-B-Carre.png" xysize(100, 100)
 
-            drag_name "Yellow"
+            drag_name "B-Carre"
+
+            draggable False
+
+        ### -- ###
+        drag:
+        ### -- ###
+
+            align(0.2, 0.2)
+            image "NM-B-Rond.png" xysize(100, 100)
+
+            drag_name "B-Rond"
+
+            draggable False
+
+        ### -- ###
+        drag:
+        ### -- ###
+
+            align(0.3, 0.2)
+            image "NM-B-Triangle.png" xysize(100, 100)
+
+            drag_name "B-Triangle"
 
             draggable False
 
@@ -110,9 +196,31 @@ screen drag_drop:
         ### -- ###
 
             align(0.4, 0.2)
-            image Solid("#1f9414") xysize(50, 50)
+            image "NM-G-Carre.png" xysize(100, 100)
 
-            drag_name "Green"
+            drag_name "G-Carre"
+
+            draggable False
+
+        ### -- ###
+        drag:
+        ### -- ###
+
+            align(0.5, 0.2)
+            image "NM-G-Rond.png" xysize(100, 100)
+
+            drag_name "G-Rond"
+
+            draggable False
+
+        ### -- ###
+        drag:
+        ### -- ###
+
+            align(0.6, 0.2)
+            image "NM-G-Triangle.png" xysize(100, 100)
+
+            drag_name "G-Triangle"
 
             draggable False
 
@@ -120,21 +228,32 @@ screen drag_drop:
         drag:
         ### -- ###
         
-            align(0.6, 0.2)
-            image Solid("#403dff") xysize(50, 50)
+            align(0.7, 0.2)
+            image "NM-R-Carre.png" xysize(100, 100)
 
-            drag_name "Blue"
+            drag_name "R-Carre"
 
             draggable False
 
         ### -- ###
         drag:
         ### -- ###
-
+        
             align(0.8, 0.2)
-            image Solid("#ff94fa") xysize(50, 50)
+            image "NM-R-Rond.png" xysize(100, 100)
 
-            drag_name "Pink"
+            drag_name "R-Rond"
+
+            draggable False
+
+        ### -- ###
+        drag:
+        ### -- ###
+        
+            align(0.9, 0.2)
+            image "NM-R-Triangle.png" xysize(100, 100)
+
+            drag_name "R-Triangle"
 
             draggable False
 
@@ -149,11 +268,10 @@ screen drag_win:
 screen drag_lose:
     image "garage.png"
 
-
 ############################# - go screen - ################################
 
 label test_corres:
-    $ remaining_timer = 30
+    $ remaining_timer = 300000
 
     call screen drag_drop
 
