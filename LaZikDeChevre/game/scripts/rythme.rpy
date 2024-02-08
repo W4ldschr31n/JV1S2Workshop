@@ -6,13 +6,14 @@ init python:
     MOUSEBUTTONDOWN=pygame.MOUSEBUTTONDOWN
     
     class MiniGameRythmNote:
-        def __init__(self, sprite, speed, timerStart, isGood):
+        def __init__(self, sprite, note_sound, speed, timerStart, isGood):
             self.sprite = sprite
+            self.note_sound = note_sound
             self.speed = speed
             self.timerStart = timerStart
             self.show = manager.create(sprite)
-            self.show.x = -64
-            self.show.y = Y_GUITAR
+            self.show.x = -200
+            self.show.y = Y_GUITAR - 32
             self.moving = False
             self.isGood = isGood
             
@@ -56,6 +57,7 @@ init python:
                     if X_GUITAR - 40 <= int(sprite.x) <= X_GUITAR + 40:
                         if sprite.isGood:
                             store.hits += 1
+                            renpy.sound.play("GUITAR_%s.ogg"%sprite.note_sound)
                         else:
                             store.misses += 1
                         sprite.show.destroy()
@@ -63,10 +65,6 @@ init python:
                         break
             else:
                 store.misses += 1
-                # nearly hit
-                if notes[0].x >= X_GUITAR - 100:
-                    notes[0].show.destroy()
-                    notes.pop(0)
         renpy.restart_interaction()
         if not notes:
             return True
@@ -81,27 +79,11 @@ init python:
     frequenceMedium = 0.5
     frequenceSlow = 1.0
     
-define sequenceRythme1 = [
-    (note3, frequenceFast, True),
-    (note3, frequenceFast, True),
-    (note1, frequenceSlow, True),
-    (note4, frequenceFast, False),
-    (note1, frequenceSlow, True),
-    (None, 2, True),
-    (note2, frequenceMedium, True),
-    (note1, frequenceSlow, True),
-    (None, 3, True),
-    (note3, frequenceFast, True),
-    (note4, frequenceFast, False),
-    (note3, frequenceFast, True),
-    (note3, frequenceFast, True),
-]
 screen screen_minigame_rythme:
     text "Réussi: [hits], Raté: [misses]" xalign 0.5
     text ["Notes restantes "+str(len(notes))] xalign 0.5 yalign 0.1
     add "guitare.png" xalign 0.5 yalign 0.5
-    frame:
-        area (X_GUITAR-40, Y_GUITAR-100, 80, 200)
+    add "note_target.png" xalign 0.5 yalign 0.5
 
 
 label minigame_rythme(sequence, difficulte):
@@ -113,10 +95,10 @@ label minigame_rythme(sequence, difficulte):
         manager = SpriteManager(update=sprites_update, event=sprites_event)
         notes = []
         timerStart = 0
-        for step in sequenceRythme1:
+        for step in sequence:
             timerStart += step[1]
             if step[0] is not None:
-                notes.append(MiniGameRythmNote(step[0], speedRythme1, timerStart, step[2]))
+                notes.append(MiniGameRythmNote(step[0], step[1],speedRythme1, timerStart, step[3]))
         renpy.show_screen("screen_minigame_rythme")
         renpy.show("_", what=manager, zorder=1)
         
