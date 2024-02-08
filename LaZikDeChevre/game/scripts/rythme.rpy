@@ -90,6 +90,7 @@ screen screen_minigame_rythme:
 
 
 label minigame_rythme(sequence, difficulte, speedRythme):
+    "Cliquez quand les notes atteignent le rond central."
     python:
         hits = 0
         misses = 0

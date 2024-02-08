@@ -81,6 +81,7 @@ define sequence_rythme_festival = [
 ]
 default resultat_rythme_festival = 0
 label minigame_rythme_festival:
+    $ festival_difficulte = 0 if resultat_corres else 2
     call minigame_rythme(sequence_rythme_festival, 0, speedRythme2)
     $ resultat_rythme_festival = score_minigame_rythme
     return

@@ -131,10 +131,16 @@ label validation:
         hide screen salle
         hide screen loges
         hide screen gradin
-        narrateur "La nuit tombe, l'excitation est à son paroxysme: la foule ne tient plus en place. Enfin, la première star monte sur scène: le Petrisseur lance les hostilités."
+        hide screen party
+        narrateur "La nuit tombe, l'excitation est à son paroxysme: la foule ne tient plus en place. Enfin, la première star monte sur scène: le Pétrisseur lance les hostilités."
+        show petrisseur hautain at center:
+            zoom 0.2
         narrateur "Ces quelques minutes semblent avoir été jouées en quelques secondes. Des fans en délire, la tête résonnante : le niveau entre Rockbihan et ce soir n'est clairement plus le même." 
-        narrateur "Une progression impressionnante qui témoigne de la rage de vaincre de la fameuse rockstar qui conquit les scènes depuis plus de 2 ans et qui ne semble pas prête de s'arrêter.  
-        A peine avons-nous eu le temps de souffler que Rocklette entre en scène confiant, et sans un mot entame sa prestation. "
+        narrateur "Une progression impressionnante qui témoigne de la rage de vaincre de la fameuse rockstar qui conquit les scènes depuis plus de deux ans et qui ne semble pas prête de s'arrêter. "
+        hide petrisseur
+        show jean rock at center:
+            zoom 0.3
+        narrateur "À peine avons-nous eu le temps de souffler que Rocklette entre en scène confiant, et sans un mot entame sa prestation: un morceau intitulé 'Rockblechon'."
         jump concert_stade
     else :
         narrateur "Il vous manque des objets, il vous faut un câble, un médiator et un micro."
@@ -162,18 +168,21 @@ label recup_cable:
     $ guit_inventory.append(cable)
     $ cable_recupere = True
     hide screen cable
+    "Vous avez trouvé le câble."
     jump vers_loges
 
 label recup_mediator:
     $ guit_inventory.append(mediator)
     $ mediator_recupere = True
     hide screen mediator
+    "Vous avez trouvé le médiator."
     jump vers_gradin
 
 label recup_micro:
     $ guit_inventory.append(micro)
     $ micro_recupere = True
     hide screen micro
+    "Vous avez trouvé le micro."
     jump vers_scene
 
 

@@ -288,33 +288,32 @@ screen drag_drop:
 label drag_win:
 
     scene backstage
-    show jean happy at center:
-        zoom 0.3
-    narrateur "Jean ne succombat pas au stress et réussit à installer son matèriel à temps"
+    
 
     jump post_corres
 
 label drag_lose:
 
     scene backstage
-    show jean sad at center:
-        zoom 0.3
-    narrateur "Jean succombat au stress, il ne réussit pas à installer son matériel à temps. Nous esperons que cela n'impactera pas trop sa perfomance"
 
     jump post_corres
 
 label minigame_corres:
     $ remaining_timer = 20
-
+    "Branchez les cables en cliquant, glissant et déposant les bons embouts dans les bonnes prises. Faites vite avant le début du concert !"
     call screen drag_drop
 
 
 label win_corres:
-
+    show jean happy at center:
+        zoom 0.3
+    narrateur "Jean ne succombe pas au stress et réussit à installer son matériel à temps. Il peut commencer sa performance avec confiance."
     $ resultat_corres = True
     return
 
 label lose_corres:
-
+    show jean sad at center:
+        zoom 0.3
+    narrateur "Jean surmonte le stress, il ne réussit pas à installer son matériel à temps. Nous espérons que cela n'impactera pas trop sa perfomance."
     $ resultat_corres = False
     return

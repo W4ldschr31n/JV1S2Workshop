@@ -5,18 +5,18 @@ label interview:
         zoom 0.5
     journaliste "{cps=25}Comment est Jean au quotidien? Est-ce que vous acceptez son choix de vie?"
     show john assis ok
-    john "{cps=25}Oh bah vous savez c'est un ptit jeune avec des rêves de p'tit jeune ! Boh j'comprends pas tout à ses délires mais il a l'air content. 
-    Après c'est vrai que j'aurais préféré qu'il prenne la relève mais que voulez-vous.. c'est la vie bouffi."
-    journaliste "{cps=25}Cette passion, comment l'a t-il eue ? Est-ce que cela fait longtemps qu'il s'intéresse au rock?"
+    john "{cps=25}Oh bah vous savez c'est un p'tit jeune avec des rêves de p'tit jeune ! Boh j'comprends pas tout à ses délires mais il a l'air content. 
+    Après c'est vrai que j'aurais préféré qu'il prenne la relève mais que voulez-vous... c'est la vie bouffi."
+    journaliste "{cps=25}Cette passion, comment l'a t-il trouvée ? Est-ce que cela fait longtemps qu'il s'intéresse au rock?"
     show john assis
     john "{cps=25}Oh bah j'sais pô hein ! J'écoute pas de rock et mon ex-femme non plus !  Il a du choper ça à l'école avec ses potes. Vous savez ça remonte hein ! 
-    Quelques années déjà. Jpense qu'il a kiffé dès le départ, et ça s'est fait tout seul."
+    Quelques années déjà. Je pense qu'il a kiffé dès le départ, et ça s'est fait tout seul."
     journaliste "{cps=25}Intéressant en effet. Il semblerait que la passion du rock soit innée chez lui." 
     show john assis sad
     john "{cps=25}Oh bah la passion c'est un gène dans notre famille ! Dommage que le fromage n'ait pas suivi. Mon ex-femme était pareille ! Toujours passionnée."
     journaliste "{cps=25}Votre ex-femme? Pouvez-vous nous en dire plus sur elle ? Comment était-elle?"
     show john assis very sad
-    john "{cps=25}Elle était là, c'était déjà pas mal. Elle est ensuite partie se marier avec le charcutier de la bourgade d'à côté cette mégère. Je crois qu'elle ne manque pas à Jean: il a oublié son prénom." 
+    john "{cps=25}Elle était là, c'était déjà pas mal. Elle est ensuite partie se marier avec le charcutier de la bourgade d'à côté, cette mégère. Je crois qu'elle ne manque pas à Jean: il en a même oublié son prénom." 
     journaliste "{cps=25}Êtes-vous fier de Jean?"
     show john assis happy
     john "{cps=25}Très ! Il percera vous verrez ! Plus que Johnny ! Parole de John."
@@ -45,7 +45,7 @@ label bar:
 label prestabar:
     show gerant happy at center:
         zoom 0.5
-    gerant "{cps=25}Bon d'accord, j'te fais confiance. Mais me déçoit pas hein ! À dans 5 jours."
+    gerant "{cps=25}Bon d'accord, j'te fais confiance. Mais ne me déçoit pas hein ! À dans 5 jours."
     hide gerant
     show jean happy at center:
         zoom 0.3
@@ -63,15 +63,16 @@ label prestabar:
 
     john "{cps=25}Ça va aller mon garçon ! Je sais que tu peux le faire ! C'est pas le public de ce bar miteux qui va t'arrêter !"
     jean "{cps=10}..."
-    john "{cps=25}Aller ! Tu peux le faire oh ! Va jusqu'au bout. Tu m'as pas cassé les biiip pendant toutes ces années pour abandonner maintenant."
+    john "{cps=25}Aller ! Tu peux le faire oh ! Va jusqu'au bout. Tu m'as pas cassé les *biiip* pendant toutes ces années pour abandonner maintenant."
     hide john
-    show jean
+    show jean:
+        zoom 0.3
     narrateur "{cps=25}Après une discussion avec son père, Jean semble enfin aller mieux, et est prêt à en découdre. Quelques jours avant la prestation, Jean se met enfin au travail. 
     Pour se faire, il a fait appel à son meilleur ami Patrick, et même si Jean semble s'être calmé, Patrick, lui, s'inquiète toujours."
     show patrick angry at left:
-        zoom 0.5
+        zoom 0.4
     patrick "{cps=25}T'es sûr de toi? Vraiment? Non parce que..tu sais...beaucoup ont essayé sans succès. C'est dur de faire carrière dans le milieu ! Et puis beaucoup finissent drogués !"
-    jean "{cps=25}Mais oui ! C'est mon rêve tu le sais! Je vais pas abandonner pour si peu ! Et puis si ça peut te rassurer, si jamais je me foire, c'qui arrivera pas, ben y'a la fromagerie."
+    jean "{cps=25}Mais oui ! C'est mon rêve tu le sais! Je vais pas abandonner pour si peu ! Et puis si ça peut te rassurer, si jamais je me foire, ce qui n'arrivera pas, ben y'a la fromagerie."
     show patrick
     show jean happy
     narrateur "{cps=25}Jean, un homme qui a la chance d'être entouré."
@@ -87,7 +88,7 @@ label prestabar:
         yalign 0.2
         zoom 0.2
 
-    narrateur "{cps=25}Nous retrouvons Jean au bar, le jour du concert. Après des journées d'entrainements intensifs, il est fin prêt à en découdre devant le public qui l'attend."
+    narrateur "{cps=25}Nous retrouvons Jean au bar, le soir du concert. Après des journées d'entrainement intensif, il est fin prêt à en découdre devant le public qui l'attend."
     narrateur "En vérité, le public ne l'attend pas vraiment, mais Jean en est persuadé... Nous l'apercevons au loin sur scène, en train de se préparer. Les lumières s'éteignent et le show commence."
 
     #rythme bar
@@ -104,7 +105,9 @@ label prestabar:
         show jean rock happy
         narrateur "{cps=25}Un show incroyable que nous a offert Jean ce soir. Le commencement d'un rêve, la concrétisation d'une volonté, et peut être le début d'une carrière. 
         De notre place, nous apercevons Jean qui s'entretient avec une autre personne. Mais qui est-elle? Un fois le show terminé, Jean finit par nous rejoindre."
-        jean "{cps=25}Vous devinerez jamais qui vient d'me parler ! L'organisateur du festival de rock là, vous savez, Rockbihan, et ben il vient tout juste de m'inviter à jouer sur scène !"
+        show jean happy at center:
+            zoom 0.3
+        jean "{cps=25}Vous devinerez jamais qui vient d'me parler ! L'organisateur du festival de rock là, vous savez, Rockbihan. Eh bien il vient tout juste de m'inviter à jouer sur scène !"
         journaliste "{cps=25}La chance semble enfin vous sourire. Nous allons vous suivre de près désormais."
         narrateur "{cps=25}Jean, l'exemple prouvant que la persévérance peut se montrer payante. En espérant que ce festival soit tout-autant une réussite pour lui."
         jump guitare
