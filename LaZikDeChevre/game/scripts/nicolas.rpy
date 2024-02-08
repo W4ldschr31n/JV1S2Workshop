@@ -20,9 +20,7 @@ label test_persuasion:
     jump persuasion_gerant
 
 label test_rythme:
-    call minigame_rythme(sequenceRythme1, 0)
-    "A plus"
-    return
+    jump minigame_rythme_1
 
 label test_dodge:
     call minigame_dodge
