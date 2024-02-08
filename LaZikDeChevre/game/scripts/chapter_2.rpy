@@ -32,7 +32,8 @@ label bar:
         scene bg bar petit sombre
     show gerant at left:
         zoom 0.5
-    show jean at right
+    show jean trepigne at right:
+        zoom 0.3
     narrateur "Nous retrouvons Jean dans ce petit bar, deux jours après sa prestation, bien décidé à convaincre le gérant de le laisser jouer lors d'une soirée, dans 5 jours. 
     Une chance qui permettrait potentiellement à Jean d'augmenter sa popularité. Nous observons de loin cet entretien. "
     gerant "\[...\] Non mais je comprend bien ce que vous me demandez, mais j'ai aucune assurance sur la qualité de votre prestation."
@@ -42,17 +43,21 @@ label bar:
 
 
 label prestabar:
+    show gerant happy at center:
+        zoom 0.5
     gerant "Bon d'accord, j'te fais confiance. Mais me déçoit pas hein ! À dans 5 jours."
     hide gerant
-    show jean#sad
+    show jean happy at center:
+        zoom 0.3
     narrateur "C'est un succès pour Jean, qui trépigne d'impatience, avec une seule idée en tête: faire ses preuves. Un pas de plus vers son rêve. Mais sera-t-il à la hauteur?"
+    show jean trepigne
     jean "Je suis content qu'il aie accepté, mais la vraie épreuve commence maintenant. J'dois pas me laisser emporter."
     narrateur "Jean va maintenant devoir se préparer pour sa prochaine performance, sa première devant un vrai public. Il ne cache pas son anxiété."
     hide jean
     scene maison
     narrateur "Nous sommes dans la maison de John et Jean, nous assistons à un moment de motivation paternelle."
-    show jean at right:
-        zoom 0.5
+    show jean sad at right:
+        zoom 0.3
     show john happy at left:
         zoom 0.5
 
@@ -68,7 +73,7 @@ label prestabar:
     patrick "T'es sûûr de toi? Vraiment? Non parce que..tu sais...beaucoup ont essayé sans succès. C'est dur de faire carrière dans le milieu ! Et puis beaucoup finissent drogués !"
     jean "Mais oui ! C'est mon rêve tu le sais! Je vais pas abandonner pour si peu ! Et puis si ça peut te rassurer, si jamais je me foire, c'qui arrivera pas, ben y'a la fromagerie."
     show patrick
-    show jean#happy
+    show jean happy
     narrateur "Jean, un homme qui a la chance d'être entouré."
 
     if resultat_rythme_garage >= 3:
@@ -77,9 +82,10 @@ label prestabar:
         scene bg bar moyen clair
     else:
         scene bg bar petit clair
-    show jean grand:
-        xalign 0.25
-        yalign 0.5
+    show jean rock:
+        xalign 0.4
+        yalign 0.2
+        zoom 0.2
 
     narrateur "Nous retrouvons Jean au bar, le jour du concert. Après des journées d'entrainements intensifs, il est fin prêt à en découdre devant le public qui l'attend. 
     En vérité, le public ne l'attend pas vraiment, mais Jean en est persuadé... Nous l'apercevons au loin sur scène, en train de se préparer. Les lumières s'éteignent et le show commence."
@@ -95,7 +101,7 @@ label prestabar:
     
 
     label winjeu2:
-        show jean#content
+        show jean rock happy
         narrateur "Un show incroyable que nous a offert Jean ce soir. Le commencement d'un rêve, la concrétisation d'une volonté, et peut être le début d'une carrière. 
         De notre place, nous apercevons Jean qui s'entretient avec une autre personne. Mais qui est-elle? Un fois le show terminé, Jean finit par nous rejoindre."
         jean "Vous devinerez jamais qui vient d'me parler ! L'organisateur du festival de rock là, vous savez, Rockbihan, et ben il vient tout juste de m'inviter à jouer sur scène !"
@@ -104,11 +110,12 @@ label prestabar:
         jump guitare
 
     label losejeu2:
-        hide jean grand
+        show jean rock sad
 
-        narrateur "Un show....existant. Une présence....marquante, voire un peu trop. Personne n'aurait pu deviner qu'une guitare pourrait faire un tel vacarme. 
+        narrateur "Un show... peu attrayant. Une présence....marquante, voire un peu trop. Personne n'aurait pu deviner qu'une guitare pourrait faire un tel vacarme. 
         Et pourtant, Jean arrive vers nous quelques instants plus tard, tout sourire."
-        show jean#happy
+        show jean happy at center:
+            zoom 0.2
         jean "J'ai rencontré l'organisateur du célèbre festival du Rockbihan, il m'a invité malgré ma performance ratée !"
         hide jean
         narrateur "Nous allons à la rencontre de l'organisateur en question, un peu plus loin dans la salle."
@@ -123,8 +130,8 @@ label prestabar:
 
 label rue:
     scene bar moyen claire
-    show jean at right:# sad:
-        zoom 0.5
+    show jean sad at right:
+        zoom 0.3
     show gerant angry at left:
         zoom 0.5
     gerant "Très drôle ! Aller, retourne jouer ailleurs. Tu me fais perdre mon temps."

@@ -21,7 +21,7 @@ define viktor = Character("viktor",color="#d86169")
 define rocklette = Character ("Rocklette",color="#1a909f")
 
 label chapter_1:
-    scene frometon
+    scene bg table_fromage
     narrateur "En France des milliers d'artisans produisent chaque jour un produit emblématique de la culture gastronomique de notre pays qui accompagne chaque repas des français, le fromage.
     Chaque régions possede ses spécialités que vendent les fromagerie, et nous allons suivre aujourd'hui l'une d'entre elles."
 
@@ -33,16 +33,20 @@ label chapter_1:
     john "Alors ici on est dans l'affinerie, c'est là où reposent tous nos magnifiques fromages et où ils prennent leurs goûts. C'est un métier de la patience et c'est vrai qu'il faut en être passionné."
     journaliste "Et vous êtes seul pour vous occuper de tout ça ?"
     john "Oh non je bosse avec mon fils, Jean."
-    show jean at right
+    show jean at right:
+        zoom 0.3
     journaliste "Malheureusement, Jean ne semble pas suivre le même rêve que son père, et aspire à une vie plus mouvementée. Épaulant son père au quotidien, sa petite vie tranquille ne lui convient plus."
     hide john
-    jean "C'est vrai que parfois je rêve d'un peu plus. rire J'aime bien le fromage, mais une vie entière c'est un peu long. "
+    jean "C'est vrai que parfois je rêve d'un peu plus... *rires* J'aime bien le fromage, mais une vie entière c'est un peu long. "
+    show jean rock
     journaliste "Son passe temps? Jouer du rock dans son garage. Un hobby qui contraste bien avec ses petites habitudes dans la boutique."
+    show jean happy
     jean "J'adore assister à des concerts dans un bar pas loin et j'ai toujours aimé le rock. Mais je veux pas me limiter à ça. Mon but ultime ça serait d'atteindre l'international."
     journaliste "Pour atteindre ce but, Jean s'entraine énormément en autodidacte. Après quelques négociations, il nous autorise enfin une petite session privée."
 
     scene garage
-    show jean
+    show jean rock at center:
+        zoom 0.3
 
     jean "Voilà mon garage, ma scène à moi on peut dire. Elle est modeste mais fonctionnelle, et puis ici les voisins n'entendent pas donc ça évite les plaintes."
     journaliste 'Pour cette présentation, Jean a choisi de nous jouer un morceau de sa composition intitulé "liberté fromagère".'
@@ -57,12 +61,15 @@ label chapter_1:
         jump losejeu1
 
 label winjeu1:
+    show jean rock happy:
+        zoom 0.3
     narrateur "Avec un talent indéniable pour la guitare, Jean possède les qualités pour percer dans le milieu du rock. Mais en a-t'il l'étoffe? 
     Un rêve que beaucoup de personnes abandonne, mais Jean semble déterminé à ne pas laisser tomber."
     jean "J'en rêve depuis que je suis tout petit. C'est vraiment quelque chose qui me tient à coeur, et j'suis pas prêt d'abandonner."
     jump interview
 label losejeu1:
-    narrateur  " .....la détermination. Un facteur nécessaire, mais qui ne fait pas tout. Un rêve certain, avec un accomplissement douteux. 
+    show jean rock sad
+    narrateur  "La détermination: un facteur nécessaire, mais qui ne fait pas tout. Un rêve certain, avec un accomplissement douteux. 
     Ce qui est bien, c'est que Jean possède une marge de progression conséquente, en effet, plus bas que ça c'est compliqué. Heureusement, Jean ne semble pas décidé à abandonner." 
     jean "C'est vrai que je dois m'améliorer, mais j'aime les challenges."
     jump interview

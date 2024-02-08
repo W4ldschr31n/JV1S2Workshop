@@ -23,9 +23,9 @@ init python:
                 self.current_branch = self.current_branch if self.contextual_choice.next_branch != END_BRANCH else END_BRANCH
                 self.contextual_choice = None
             else:
-                self.current_branch = choice.next_branch
                 if choice.points == 0:
-                    self.get_choices().remove(choice)
+                    self.indexed_branches[self.current_branch].remove(choice)
+                self.current_branch = choice.next_branch
 
         def has_choices(self):
             return self.current_branch != END_BRANCH

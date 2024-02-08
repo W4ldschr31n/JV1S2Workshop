@@ -18,7 +18,7 @@ init python:
             self.isGood = isGood
             
         def update(self):
-            if store.t + self.timerStart < time.time():
+            if store.t + self.timerStart <= time.time():
                 self.moving = True
                 self.x = self.x + self.speed
             else:
@@ -41,7 +41,7 @@ init python:
     def sprites_update(st):
         for sprite in notes[:]:
             sprite.update()
-            if sprite.x > X_GUITAR + 40:
+            if sprite.x > X_GUITAR + 32:
                 if sprite.isGood:
                     store.misses += 1
                 else:
@@ -54,17 +54,19 @@ init python:
         if ev.type == MOUSEBUTTONDOWN and ev.button == 1:
             for sprite in notes[:]:
                 if sprite.moving:
-                    if X_GUITAR - 40 <= int(sprite.x) <= X_GUITAR + 40:
+                    if X_GUITAR - 128 <= int(sprite.x) <= X_GUITAR + 32:
                         if sprite.isGood:
                             store.hits += 1
                             renpy.sound.play("GUITAR_%s.ogg"%sprite.note_sound)
                         else:
                             store.misses += 1
+                            renpy.sound.play("GUITAR_MISS.ogg")
                         sprite.show.destroy()
                         notes.remove(sprite)
                         break
             else:
                 store.misses += 1
+                renpy.sound.play("GUITAR_MISS.ogg")
         renpy.restart_interaction()
         if not notes:
             return True
@@ -75,9 +77,11 @@ init python:
     note4 = Image("note4.png")
 
     speedRythme1 = 20
+    speedRythme2 = 30
+    speedRythme3 = 40
     frequenceFast = 0.3
-    frequenceMedium = 0.5
-    frequenceSlow = 1.0
+    frequenceMedium = 0.6
+    frequenceSlow = 1.2
     
 screen screen_minigame_rythme:
     text "Réussi: [hits], Raté: [misses]" xalign 0.5
@@ -86,7 +90,7 @@ screen screen_minigame_rythme:
     add "note_target.png" xalign 0.5 yalign 0.5
 
 
-label minigame_rythme(sequence, difficulte):
+label minigame_rythme(sequence, difficulte, speedRythme):
     python:
         hits = 0
         misses = 0
@@ -96,9 +100,9 @@ label minigame_rythme(sequence, difficulte):
         notes = []
         timerStart = 0
         for step in sequence:
-            timerStart += step[1]
+            timerStart += step[2]
             if step[0] is not None:
-                notes.append(MiniGameRythmNote(step[0], step[1],speedRythme1, timerStart, step[3]))
+                notes.append(MiniGameRythmNote(step[0], step[1], speedRythme, timerStart, step[2]))
         renpy.show_screen("screen_minigame_rythme")
         renpy.show("_", what=manager, zorder=1)
         
@@ -111,13 +115,14 @@ label minigame_rythme(sequence, difficulte):
     return
 
 label fin_rythm(accuracy, difficulte):
-    ""
     "Précision : [accuracy]\%"
     if accuracy > 70 + difficulte:
         $ score_minigame_rythme = 3
+        "Quelle incroyable performance !"
     elif accuracy > 50 + difficulte:
         $ score_minigame_rythme = 2
+        "La performance est agréable à écouter."
     else:
         $ score_minigame_rythme = 1
-
+        "La performance n'est pas convaincante."
     return

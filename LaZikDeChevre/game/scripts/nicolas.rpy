@@ -20,7 +20,8 @@ label test_persuasion:
     jump persuasion_gerant
 
 label test_rythme:
-    jump minigame_rythme_garage
+    scene bg garage
+    jump minigame_rythme_rue
 
 label test_dodge:
     call minigame_dodge
