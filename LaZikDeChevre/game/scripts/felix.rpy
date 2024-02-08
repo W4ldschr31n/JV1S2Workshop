@@ -6,17 +6,17 @@ transform custom_zoom2:
 transform custom_cable:
     zoom 0.2
     xalign 0.55
-    yalign 0.75
-
-transform custom_micro:
-    zoom 0.1
-    xalign 0.9
     yalign 0.8
 
+transform custom_micro:
+    zoom 0.2
+    xalign 0.91
+    yalign 0.85
+
 transform custom_mediator:
-    zoom 0.1
-    xalign 0.55
-    yalign 0.75
+    zoom 0.05
+    xalign 0.045
+    yalign 0.3
 
 define guitrouge = Item ("guitare1","guitare1.png")
 define guitbleu = Item ("guitare2","guitare2.png")
@@ -24,7 +24,7 @@ define guitvert = Item ("guitare3","guitare3.png")
 define guitviolet = Item ("guitare4","guitar4.png")
 define cable = Item ("cable","cable.png")
 define mediator = Item ("mediator","mediator.png")
-define micro = Item ("micro","micro.png")
+define micro = Item ("micro","micreau.png")
 
 
 screen choixguit:
@@ -116,7 +116,7 @@ screen gradin:
         action Jump ("gradin")
 
 screen party:
-    textbutton "vers le concnert ":
+    textbutton "vers le concert ":
         background "black"
         xpos 900
         ypos 100
@@ -124,10 +124,13 @@ screen party:
 
 label validation:
     if all([cable_recupere, mediator_recupere, micro_recupere]):
-        hide screen vers_scene
+        hide screen salle
         hide screen loges
         hide screen gradin
-        narrateur "Le concert demarre"
+        narrateur "La nuit tombe, l'excitation est à son paroxysme: la foule ne tient plus en place. Enfin, la première star monte sur scène: le Petrisseur lance les hostilités. 
+        Ces quelques minutes semblent avoir été jouées en quelques secondes. Des fans en délire, la tête résonnante : le niveau entre Rockbihan et ce soir n'est clairement plus le même. 
+        Une progression impressionnante qui témoigne de la rage de vaincre de la fameuse rockstar qui conquit les scènes depuis plus de 2 ans et qui ne semble pas prête de s'arrêter.  
+        A peine avons-nous eu le temps de souffler que Rocklette entre en scène confiant, et sans un mot entame sa prestation. "
         jump concert_stade
     else :
         narrateur "Il vous manque des objet"
@@ -145,7 +148,7 @@ screen mediator:
 
 screen micro:
     imagebutton:
-        idle "micro.png" at custom_micro
+        idle "micreau.png" at custom_micro
         action Call ("recup_micro")
 
 
