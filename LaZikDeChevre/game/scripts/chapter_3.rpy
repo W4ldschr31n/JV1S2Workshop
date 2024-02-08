@@ -18,7 +18,7 @@ label guitare:
 
 label persuasion_john_succes:
     narrateur "Jean a réussi à convaincre John de lui acheter une guitare, il va maintenant pouvoir choisir celle qu'il préfère."
-    scene black:
+    scene black
     show journal at truecenter
     call screen choixguit
 

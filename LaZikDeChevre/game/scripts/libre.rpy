@@ -27,7 +27,7 @@ label vers_scene:
     
 
 label vers_gradin:
-    scene bg gradin:
+    scene bg gradin
     hide screen micro
     hide screen cable
     hide screen gradin
