@@ -60,18 +60,23 @@ screen choixguit:
 
 label choix1:
     $ guit_inventory.append(guitrouge)
-    narrateur "ouai la meilleur"
+    narrateur "ouais la meilleur"
     jump festival
 
 label choix2:
     $ guit_inventory.append(guitbleu)
-    narrateur "ouai la meilleur"
+    narrateur "ouais la meilleur"
     jump festival
     
 
 label choix3:
     $ guit_inventory.append(guitvert)
-    narrateur "ouai la meilleur"
+    narrateur "ouais la meilleur"
+    jump festival
+
+label choix4:
+    $ guit_inventory.append(guitviolet)
+    narrateur "ouais la meilleur"
     jump festival
     
 

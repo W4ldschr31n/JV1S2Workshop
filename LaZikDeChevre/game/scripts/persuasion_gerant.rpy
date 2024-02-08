@@ -9,14 +9,13 @@ default persuasion_tree_gerant = PersuasionTree(
 
 
 label persuasion_gerant:
-    $ score_minigame_rythme = 3
     python:
-        if score_minigame_rythme == 1:
-            contextual_choice = PersuasionChoice("Montrer la vidéo de sa performance", "Euh... non merci", -100, END_BRANCH)
-        elif score_minigame_rythme == 2:
+        if resultat_rythme_garage >= 3:
+            contextual_choice = PersuasionChoice("Montrer la vidéo de sa performance", "Tu as un talent incroyable !", 100, END_BRANCH)
+        elif resultat_rythme_garage >= 2:
             contextual_choice = PersuasionChoice("Montrer la vidéo de sa performance", "Pas mal pour un débutant", 10, 0)
         else:
-            contextual_choice = PersuasionChoice("Montrer la vidéo de sa performance", "Tu as un talent incroyable !", 100, END_BRANCH)
+            contextual_choice = PersuasionChoice("Montrer la vidéo de sa performance", "Euh... non merci", -100, END_BRANCH)
         persuasion_tree_gerant.contextual_choice = contextual_choice
     call persuasion(persuasion_tree_gerant, g, "gerant")
     if persuasion_win:

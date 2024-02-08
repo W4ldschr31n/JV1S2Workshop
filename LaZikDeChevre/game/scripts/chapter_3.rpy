@@ -4,16 +4,30 @@ label guitare:
 
 
     scene maison
-    show john at center:
+    show jean at left:
+        zoom 0.3
+    show john at right:
         zoom 0.5
 
 
-    narrateur "Nous retrouvons ensuite Jean et son père John dans leur salon. John content d'apprendre la nouvelle, se réjouit pour son fils avant de lui faire une proposition des plus alléchantes."
-    john "Il va te falloir une vraie guitare désormais fils. Regarde moi donc ça, c'est une collègue qui me l'a passé, choisi celle qui te plait."
+    narrateur "Nous retrouvons ensuite Jean et son père John dans leur salon. John est content d'apprendre la nouvelle, il se réjouit pour son fils. Jean en profite alors pour lui faire part de sa demande. Il voudrait une nouvelle guitare. ."
+    show john worried:
+        zoom 0.3
+    john "Une nouvelle guitare ?"
     hide john
+    hide jean
+
+    jump persuasion_john
+
+
+label persuasion_john_succes:
+    narrateur "Jean a réussi à convaincre John de lui acheter une guitare, il va maintenant pouvoir choisir celle qu'il préfère."
     scene black:
     show journal at truecenter
     call screen choixguit
+
+label persuasion_john_fail:
+    jump festival
 
 label festival:
     scene festival
