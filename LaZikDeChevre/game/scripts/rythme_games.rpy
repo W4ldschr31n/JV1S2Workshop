@@ -61,36 +61,62 @@ label minigame_rythme_rue:
 
 
 define sequence_rythme_festival = [
-    (note1, 1, frequenceFast, True),
-    # (note1, 1, frequenceFast, True),
-    # (note2, 2, frequenceMedium, True),
-    # (note2, 2, frequenceMedium, True),
-    # (note3, 3, frequenceMedium, True),
-    # (note2, 2, frequenceSlow, True),
-    # (note1, 1, frequenceFast, True),
-    # (note3, 3, frequenceMedium, True),
-    # (note2, 2, frequenceMedium, True),
-    # (note2, 2, frequenceMedium, True),
-    # (note1, 1, frequenceMedium, True),
+    (note1, 6, frequenceFast, True),
+    (note1, 6, frequenceMedium, True),
+    (note2, 8, frequenceFast, True),
+    (note2, 6, frequenceFast, True),
+    (note3, 5, frequenceFast, True),
+    (note2, 3, frequenceMedium, True),
+    (note1, 2, frequenceMedium, True),
+
+    (note1, 6, frequenceSlow, True),
+    (note1, 6, frequenceMedium, True),
+    (note2, 8, frequenceFast, True),
+    (note2, 6, frequenceFast, True),
+    (note3, 5, frequenceFast, True),
+    (note2, 3, frequenceFast, True),
+    (note1, 4, frequenceFast, True),
+    (note1, 3, frequenceFast, True),
+    (note1, 2, frequenceFast, True),
 ]
 default resultat_rythme_festival = 0
 label minigame_rythme_festival:
-    call minigame_rythme(sequence_rythme_festival, 0, speedRythme3)
+    call minigame_rythme(sequence_rythme_festival, 0, speedRythme2)
     $ resultat_rythme_festival = score_minigame_rythme
     return
 
 define sequence_rythme_stade = [
     (note1, 1, frequenceFast, True),
-    # (note1, 1, frequenceFast, True),
-    # (note2, 2, frequenceMedium, True),
-    # (note2, 2, frequenceMedium, True),
-    # (note3, 3, frequenceMedium, True),
-    # (note2, 2, frequenceSlow, True),
-    # (note1, 1, frequenceFast, True),
-    # (note3, 3, frequenceMedium, True),
-    # (note2, 2, frequenceMedium, True),
-    # (note2, 2, frequenceMedium, True),
-    # (note1, 1, frequenceMedium, True),
+    (note1, 4, frequenceFast, True),
+    (note1, 7, frequenceFast, True),
+    (note1, 4, frequenceFast, True),
+    (note4, 4, frequenceFast, False),
+    (note1, 4, frequenceFast, True),
+    (note1, 3, frequenceFast, True),
+    (note4, 1, frequenceMedium, False),
+    (note1, 1, frequenceFast, True),
+    (note1, 4, frequenceFast, True),
+    (note1, 7, frequenceFast, True),
+    (note1, 4, frequenceFast, True),
+    (note4, 4, frequenceFast, False),
+    (note1, 8, frequenceFast, True),
+    (note1, 7, frequenceFast, True),
+
+    (note1, 1, frequenceSlow, True),
+    (note1, 4, frequenceFast, True),
+    (note1, 7, frequenceFast, True),
+    (note1, 4, frequenceFast, True),
+    (note4, 4, frequenceFast, False),
+    (note1, 4, frequenceFast, True),
+    (note1, 3, frequenceFast, True),
+    (note4, 1, frequenceMedium, False),
+    (note1, 1, frequenceFast, True),
+    (note1, 4, frequenceFast, True),
+    (note1, 7, frequenceFast, True),
+    (note1, 4, frequenceFast, True),
+    (note4, 4, frequenceFast, False),
+    (note1, 8, frequenceFast, True),
+    (note1, 7, frequenceFast, True),
 ]
 
 default resultat_rythme_stade = 0

@@ -21,7 +21,7 @@ label test_persuasion:
 
 label test_rythme:
     scene bg garage
-    jump minigame_rythme_rue
+    jump minigame_rythme_stade
 
 label test_dodge:
     call minigame_dodge
