@@ -15,7 +15,7 @@
 ##
 ## La chaîne de caractère contenu dans _() est éligible à la traduction.
 
-define config.name = _("LaZikDeChevre")
+define config.name = _("De fromager à légende du rock : l'histoire de Jean")
 
 
 ## Détermine si le titre renseigné plus haut est affiché sur l'écran du menu
@@ -40,7 +40,7 @@ define gui.about = _p("""
 ## l’exécutable. Il ne doit contenir que des caractères ASCII et ne doit pas
 ## contenir d’espace, de virgules ou de points-virgules.
 
-define build.name = "LaZikDeChevre"
+define build.name = "De fromager à légende du rock : l'histoire de Jean"
 
 
 ## Sons et musiques ############################################################
@@ -125,7 +125,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## Contrôle la vitesse du texte. La valeur par défaut, 0, est infinie. Toute
 ## autre valeur est le nombre de caractères tapés par seconde.
 
-default preferences.text_cps = 0
+default preferences.text_cps = 25
 
 
 ## Le délai d’avancée automatique. Des nombres importants entraînent une longue
