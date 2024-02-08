@@ -15,7 +15,7 @@
 ##
 ## La chaîne de caractère contenu dans _() est éligible à la traduction.
 
-define config.name = _("LaZikDeChevre")
+define config.name = _("De fromager à légende du rock : l'histoire de Jean")
 
 
 ## Détermine si le titre renseigné plus haut est affiché sur l'écran du menu
@@ -40,7 +40,7 @@ define gui.about = _p("""
 ## l’exécutable. Il ne doit contenir que des caractères ASCII et ne doit pas
 ## contenir d’espace, de virgules ou de points-virgules.
 
-define build.name = "LaZikDeChevre"
+define build.name = "De fromager à légende du rock : l'histoire de Jean"
 
 
 ## Sons et musiques ############################################################
