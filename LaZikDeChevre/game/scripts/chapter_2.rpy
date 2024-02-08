@@ -54,7 +54,7 @@ label prestabar:
     jean "{cps=25}Je suis content qu'il aie accepté, mais la vraie épreuve commence maintenant. J'dois pas me laisser emporter."
     narrateur "{cps=25}Jean va maintenant devoir se préparer pour sa prochaine performance, sa première devant un vrai public. Il ne cache pas son anxiété."
     hide jean
-    scene maisonJe
+    scene maison
     narrateur "{cps=25}Nous sommes dans la maison de John et Jean, nous assistons à un moment de motivation paternelle."
     show jean sad at right:
         zoom 0.3

@@ -99,7 +99,7 @@ screen inventory:
 default salle_actuelle = "vers_loges"
 
 screen loges:
-    textbutton "loges":
+    textbutton "Loges":
         background "black"
         xpos 900
         ypos 700
@@ -113,14 +113,14 @@ screen salle:
         action [SetVariable ("store.salle_actuelle","vers_scene"), Jump ("vers_scene")]
         
 screen gradin:
-    textbutton "gradin":
+    textbutton "Gradin":
         background "black"
         xpos 100
         ypos 500
         action [SetVariable ("store.salle_actuelle","vers_gradin"), Jump ("vers_gradin")]
 
 screen party:
-    textbutton "vers le concert ":
+    textbutton "Vers le concert ":
         background "black"
         xpos 900
         ypos 100
@@ -131,9 +131,9 @@ label validation:
         hide screen salle
         hide screen loges
         hide screen gradin
-        narrateur "La nuit tombe, l'excitation est à son paroxysme: la foule ne tient plus en place. Enfin, la première star monte sur scène: le Petrisseur lance les hostilités. 
-        Ces quelques minutes semblent avoir été jouées en quelques secondes. Des fans en délire, la tête résonnante : le niveau entre Rockbihan et ce soir n'est clairement plus le même. 
-        Une progression impressionnante qui témoigne de la rage de vaincre de la fameuse rockstar qui conquit les scènes depuis plus de 2 ans et qui ne semble pas prête de s'arrêter.  
+        narrateur "La nuit tombe, l'excitation est à son paroxysme: la foule ne tient plus en place. Enfin, la première star monte sur scène: le Petrisseur lance les hostilités."
+        narrateur "Ces quelques minutes semblent avoir été jouées en quelques secondes. Des fans en délire, la tête résonnante : le niveau entre Rockbihan et ce soir n'est clairement plus le même." 
+        narrateur "Une progression impressionnante qui témoigne de la rage de vaincre de la fameuse rockstar qui conquit les scènes depuis plus de 2 ans et qui ne semble pas prête de s'arrêter.  
         A peine avons-nous eu le temps de souffler que Rocklette entre en scène confiant, et sans un mot entame sa prestation. "
         jump concert_stade
     else :

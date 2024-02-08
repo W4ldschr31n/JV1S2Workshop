@@ -85,15 +85,14 @@ label concert_stade:
                 jump losejeu6
 
         label winjeu6:
-            narrateur "{cps=25}C'est incroyable, Rocklette esquive sans difficulté les projectiles envoyés par son rival. Le Petrisseur finit par être appréhendé par la sécurité sous les yeux écarquillés du public. 
-            Un silence de mort s'installe, plus personne n'ose rien dire. C'est alors que les applaudissements reprennent, comme si rien ne s'était passé."
+            narrateur "{cps=25}C'est incroyable, Rocklette esquive sans difficulté les projectiles envoyés par son rival. Le Petrisseur finit par être appréhendé par la sécurité sous les yeux écarquillés du public."
+            narrateur "Un silence de mort s'installe, plus personne n'ose rien dire. C'est alors que les applaudissements reprennent, comme si rien ne s'était passé."
             jump evac
         
         label losejeu6:
             narrateur "{cps=25}Sous la pluie de pâtisseries, Rocklette tombe à la renverse. La sécurité monte sur scène et emmène au loin le Petrisseur, toujours fou de rage."
             narrateur "Un silence pesant règne parmi la foule, plus personne n'ose rien dire."
-            narrateur "Les applaudissements reprennent alors petit à petit, 
-            non sans gêne, avant de reprendre définitivement comme si rien ne s'était passé."
+            narrateur "Les applaudissements reprennent alors petit à petit, non sans gêne, avant de reprendre définitivement comme si rien ne s'était passé."
 
             jump evac
 
