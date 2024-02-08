@@ -39,7 +39,9 @@ label persuasion(pt, character, character_image):
     $ character_to_persuade = character
     $ persuasion_tree = pt
     show screen persuasion_bar
-    show expression character_image as char_im
+    show expression character_image as char_im:
+        xalign 0.5
+        zoom 0.5
     character_to_persuade "Je vous écoute"
 
     jump persuasion_loop
@@ -52,6 +54,7 @@ label persuasion_loop:
     else:
         $ persuasion_win = current_points >= 50
         hide char_im
+        hide screen persuasion_bar
         return
 
 label .choice_persuasion(choices):

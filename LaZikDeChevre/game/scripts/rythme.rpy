@@ -120,10 +120,4 @@ label fin_rythm(accuracy, difficulte):
     else:
         $ score_minigame_rythme = 1
 
-    image fini = ConditionSwitch("score_minigame_rythme==3", "bigwin.jpg", "score_minigame_rythme==2", "smallwin.jpg", "True", "lose.jpg")
-    show fini with fade
-    pause 3
-    hide fini
-    g "allo"
-    g "oskour"
     return

@@ -25,11 +25,7 @@ label persuasion_gerant:
         jump persuasion_gerant_fail
 
 label persuasion_gerant_fail:
-    show gerant angry
-    g "tu vas souffrir"
-    return
+    jump rue
 
 label persuasion_gerant_succes:
-    show gerant happy
-    g "ça passe pour aujourd'hui"
-    return
+    jump prestabar
