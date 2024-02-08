@@ -5,20 +5,17 @@
 
 # Le jeu commence ici
 label start:
-    $ jean_inventory = []
     menu optional_name:
         "Que voulez-vous faire?"
         "Jouer au chapitre 1":
-            jump chapter_1
-        "Test (Nicolas)":
-            jump test_nicolas
-        "Test (Felix)":
-            jump test_felix
-        "Test (Baptiste)":
-            jump minigame_corres
-        "bar":
-            jump bar 
-        "choix guitar":
+            jump chapter_1 
+        "Jouer au chapitre 2":
+            $ guit_inventory  = [guitarebase]
+            show screen inventory
             jump guitare
+        "Jouer au chapitre 3":
+            $ guit_inventory  = [guitbleu]
+            show screen inventory
+            jump pre_stade
 
     return
