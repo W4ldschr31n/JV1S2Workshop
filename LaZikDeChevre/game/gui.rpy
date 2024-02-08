@@ -27,49 +27,49 @@ define config.check_conflicting_properties = True
 
 ## Une couleur utilisée dans l’interface pour mettre l’accent sur un texte
 ## (surbrillance).
-define gui.accent_color = '#0099cc'
+define gui.accent_color = u'#cc6600'
 
 ## La couleur utilisée pour le texte d’un bouton quand il n’a jamais été
 ## sélectionné ou survolé.
-define gui.idle_color = '#888888'
+define gui.idle_color = u'#888888'
 
 ## La petite couleur est utilisé pour les textes courts qui nécessitent d’être
 ## assombris ou éclairés pour obtenir le même effet.
-define gui.idle_small_color = '#aaaaaa'
+define gui.idle_small_color = u'#aaaaaa'
 
 ## Cette couleur est utilisée pour les boutons et les barres qui sont survolées.
-define gui.hover_color = '#66c1e0'
+define gui.hover_color = u'#e0a366'
 
 ## Cette couleur est utilisé pour le texte d’un bouton sélectionné, mais qui n’a
 ## pas le focus. Un bouton est sélectionné s’il est sur l’écran actuel ou si
 ## c’est la valeur de préférence.
-define gui.selected_color = '#ffffff'
+define gui.selected_color = u'#ffffff'
 
 ## La couleur utilisée pour le texte d’un bouton qui ne peut pas être
 ## sélectionné.
-define gui.insensitive_color = '#8888887f'
+define gui.insensitive_color = u'#8888887f'
 
 ## Couleurs utilisées pour les portions de barres qui ne sont pas remplies.
 ## Elles ne sont pas utilisées directement, mais quand les fichiers d’images
 ## sont régénérés.
-define gui.muted_color = '#003d51'
-define gui.hover_muted_color = '#005b7a'
+define gui.muted_color = u'#512800'
+define gui.hover_muted_color = u'#7a3d00'
 
 ## Les couleurs utilisées pour les dialogues et les menus de choix.
-define gui.text_color = '#ffffff'
-define gui.interface_text_color = '#ffffff'
+define gui.text_color = u'#ffffff'
+define gui.interface_text_color = u'#ffffff'
 
 
 ## Polices et tailles de police ################################################
 
 ## Les polices utilisées pour le texte du jeu.
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "LTPanneaux-SemiBold.ttf"
 
 ## Les polices utilisées pour le nom des personnages.
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "LTPanneaux-SemiBold.ttf"
 
 ## Les polices utilisées pour les textes « hors du jeu ».
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "LTPanneaux-SemiBold.ttf"
 
 ## La taille normale pour les dialogues.
 define gui.text_size = 33
@@ -93,7 +93,7 @@ define gui.title_text_size = 75
 ## Menu du jeu et menu principal ###############################################
 
 ## Les images utilisées pour le menu principal et le menu du jeu.
-define gui.main_menu_background = "gui/main_menu.png"
+define gui.main_menu_background = "bg intro.png"
 define gui.game_menu_background = "gui/game_menu.png"
 
 
@@ -221,9 +221,9 @@ define gui.choice_button_borders = Borders(150, 8, 150, 8)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = '#888888'
+define gui.choice_button_text_idle_color = u'#888888'
 define gui.choice_button_text_hover_color = "#ffffff"
-define gui.choice_button_text_insensitive_color = '#8888887f'
+define gui.choice_button_text_insensitive_color = u'#8888887f'
 
 
 ## Boutons des emplacements de fichiers. #######################################
