@@ -1,2 +1,10 @@
-# Déclarez les personnages utilisés dans le jeu.
-define e = Character('Eileen', color="#c8ffc8")
+define narrateur = Character ("",what_italic=True)
+define journaliste = Character ("Journaliste",color="#7714d3")
+define john = Character ("John",color="#caad2c")
+define jean = Character ("Jean",color="#75D7E4")
+define gerant = Character ("Gerant",color="#ad591c")
+define patrick = Character ("Patrick",color="#25a94f")
+define organisateur = Character("Organisateur",color="#75D7E4")
+define petrisseur = Character("Petrisseur",color="#cf4242")
+define viktor = Character("viktor",color="#d86169")
+define rocklette = Character ("Rocklette",color="#1a909f")
