@@ -5,7 +5,7 @@ label findrogue:
     narrateur "Il est revenu peu après en nous proposant une interview avec un gouda, affirmant que les vaches complotaient: nous avons évidemment refusé."
     return
 label fin_rival:
-    scene lose_rival
+    scene bgrivalose
     narrateur "C'est uniquement quelques mois plus tard que des nouvelles de Jean nous parviendrons. Nous le retrouvons aujourd'hui dans la fromagerie de son père."
     return
 label fin_good:
@@ -19,7 +19,7 @@ label fin_good:
     La rencontre avec un jeune homme plein de rêves que nous avons vu grandir, c'est peut-être ça la magie du destin."
     return
 label end_bad:
-    scene lose_normal
+    scene bglose
     narrateur "C'est sur ces mots que nous avons quitté John, non sans un pincement au coeur. D'une fromagerie au Stade de France, tout semblait idyllique pour Jean, 
     pourtant le destin n'était pas de cet avis. Rocklette, l'histoire d'un fromager devenu star le temps d'une année: une histoire dans laquelle chacun peut trouver sa propre symbolique."
     return
