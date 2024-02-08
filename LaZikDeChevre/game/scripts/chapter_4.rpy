@@ -48,7 +48,7 @@ label stade:
     Pour ça, je dois battre le Petrisseur et même si j'ai eu des doutes à un moments, cette fois j'en suis sûr: je suis prêt."
     narrateur "Un discours motivant que nous offre Rocklette. Le jeune garçon un peu naïf aux rêves incertains que nous avions rencontré il y a maintenant un an a subi une montée en puissance 
     fulgurante que personne ne soupçonnait: même pas lui.  La star nous propose alors de l'accompagner dans ses préparatifs. "
-    jump loges
+    jump vers_loges
 
 label concert_stade:
     scene bg stade

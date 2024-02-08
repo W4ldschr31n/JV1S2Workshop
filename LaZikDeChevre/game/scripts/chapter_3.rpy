@@ -1,8 +1,4 @@
 label guitare:
-    $ guit_inventory = []
-    show screen inventory
-
-
     scene maison
     show jean at left:
         zoom 0.3
@@ -53,7 +49,7 @@ label festival:
     À la tombée de la nuit, nous retrouvons une fois de plus notre artiste en herbe en train de se préparer. Concentré, aucun détail ne lui échappe."
     hide petrisseur
     
-    call test_corres
+    call minigame_corres
 
 
 label post_corres :

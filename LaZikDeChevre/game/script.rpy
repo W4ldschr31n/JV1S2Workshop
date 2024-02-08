@@ -15,7 +15,7 @@ label start:
         "Test (Felix)":
             jump test_felix
         "Test (Baptiste)":
-            jump test_corres
+            jump minigame_corres
         "bar":
             jump bar 
         "choix guitar":

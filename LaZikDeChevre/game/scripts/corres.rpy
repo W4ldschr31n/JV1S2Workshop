@@ -1,8 +1,7 @@
-﻿init python:
+﻿default isInRightPlace = {"B-Carre":False,"B-Rond":False,"B-Triangle":False,"G-Carre":False,"G-Rond":False,"G-Triangle":False,"R-Carre":False,"R-Rond":False,"R-Triangle":False,}
+init python:
 
-    isInRightPlace = {"B-Carre":False,"B-Rond":False,"B-Triangle":False,"G-Carre":False,"G-Rond":False,"G-Triangle":False,"R-Carre":False,"R-Rond":False,"R-Triangle":False,}
-    win = True
-
+    
     def dragged_func(dragged_items, dropped_on):
         if dropped_on is not None:
             if dragged_items[0].drag_name == dropped_on.drag_name:
@@ -10,10 +9,10 @@
                 dragged_items[0].draggable = False
                 isInRightPlace[dragged_items[0].drag_name] = True
 
-                print(isInRightPlace)
+                
 
                 win = all(isInRightPlace.values())
-                print(win)
+                
 
                 if win:
                     renpy.jump("win_corres")
@@ -25,7 +24,7 @@ screen drag_drop:
 
 ############################### - timer - ################################# 
 
-    timer 0.1 repeat True action If(remaining_timer > 0, true=SetVariable('remaining_timer', round(remaining_timer - 0.1, 1)), false=Return(True))
+    timer 0.1 repeat True action If(remaining_timer > 0, true=SetVariable('remaining_timer', round(remaining_timer - 0.1, 1)), false=Jump("lose_corres"))
     text "Temps restant: [remaining_timer]" xalign 0.5
 
 ############################## - movable - ################################
@@ -300,25 +299,22 @@ label drag_lose:
     scene backstage
     show jean sad at center:
         zoom 0.3
-    narrateur "Jean succombat au stress, il ne réussit pas à installer son matèriel à temps. Nous esperons que cela n'impactera pas trop sa perfomance"
+    narrateur "Jean succombat au stress, il ne réussit pas à installer son matériel à temps. Nous esperons que cela n'impactera pas trop sa perfomance"
 
     jump post_corres
 
-label test_corres:
-    $ remaining_timer = 25
+label minigame_corres:
+    $ remaining_timer = 20
 
     call screen drag_drop
 
-    jump lose_corres
-
-    return
 
 label win_corres:
 
     $ resultat_corres = True
-    jump drag_win
+    return
 
 label lose_corres:
 
     $ resultat_corres = False
-    jump drag_lose
+    return

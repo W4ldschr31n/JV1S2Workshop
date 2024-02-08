@@ -45,6 +45,9 @@ label chapter_1:
     journaliste "Pour atteindre ce but, Jean s'entraine énormément en autodidacte. Après quelques négociations, il nous autorise enfin une petite session privée."
 
     scene garage
+    $ guit_inventory = [guitarebase]
+    show screen inventory
+
     show jean rock at center:
         zoom 0.3
 

@@ -1,6 +1,6 @@
 
 
-label loges:
+label vers_loges:
     scene bg loges
     hide screen mediator
     hide screen micro
@@ -26,7 +26,7 @@ label vers_scene:
     $ ui.interact ()
     
 
-label gradin:
+label vers_gradin:
     scene bg gradin:
     hide screen micro
     hide screen cable

@@ -86,7 +86,6 @@ init python:
 screen screen_minigame_rythme:
     text "Réussi: [hits], Raté: [misses]" xalign 0.5
     text ["Notes restantes "+str(len(notes))] xalign 0.5 yalign 0.1
-    add "guitare.png" xalign 0.5 yalign 0.5
     add "note_target.png" xalign 0.5 yalign 0.5
 
 
@@ -103,8 +102,8 @@ label minigame_rythme(sequence, difficulte, speedRythme):
             timerStart += step[2]
             if step[0] is not None:
                 notes.append(MiniGameRythmNote(step[0], step[1], speedRythme, timerStart, step[3]))
-        renpy.show_screen("screen_minigame_rythme")
         renpy.show("_", what=manager, zorder=1)
+        renpy.show_screen("screen_minigame_rythme")
         
         ui.interact()
     hide screen screen_minigame_rythme
