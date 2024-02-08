@@ -1,6 +1,7 @@
 label flashback:
-    scene boulangerie
-    show viktor
+    scene bg boulangerie
+    show viktor at left:
+        zoom 0.5
     viktor "Vus verrez !"
     journaliste " Vous ..."
     viktor "Optimiste..."
@@ -9,7 +10,8 @@ label flashback:
 
 label pre_stade:
     scene maison
-    show jean
+    show jean heureux at center:
+        zoom 0.3
     narrateur "Le lendemain"
     jean "comment"
     journaliste "une proposition"
@@ -23,28 +25,28 @@ label pre_stade:
     jump stade
 
 label stade:
-    scene stade
+    scene bg stade
     narrateur "Cela"
 
-    scene loges
+    scene bg loges
+    show jean rock heureux at center:
+        zoom 0.3
     journaliste "BOnsoir"
     rocklette "Ca va "
     narrateur "un discour"
     jump loges
 
 label concert_stade:
-    scene stade
+    scene bg stade
     narrateur "Laissant"
 
-    #jeux de rythme final
-    menu :
-        "jeux rythme stade win ?"
-        "oui":
-            $ winjeu5=True
-        "non":
-            $ winjeu5=False
+    default result_stade = 0
 
-    if winjeu5:
+    call minigame_rythme_stade
+    $ result_stade = score_minigame_rythme
+
+    
+    if result_stade >= 2:
         jump winjeu5
     else:
         jump losejeu5
@@ -52,7 +54,7 @@ label concert_stade:
 
         label winjeu5:
             narrateur "Un si beau"
-            #jeu esquive
+            call minigame_dodge
 
             menu :
                 "jeu esquive win ?"

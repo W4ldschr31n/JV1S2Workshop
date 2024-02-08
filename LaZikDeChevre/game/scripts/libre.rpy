@@ -1,11 +1,11 @@
 
 
 label loges:
-    scene loges
+    scene bg loges
     hide screen mediator
     hide screen micro
     hide screen loges
-    show screen concert
+    show screen salle
     show screen gradin
     show screen party
     if not cable_recupere:
@@ -14,11 +14,11 @@ label loges:
     $ ui.interact ()
     
 
-label concert:
-    scene concert
+label vers_scene:
+    scene bg_scene
     hide screen mediator
     hide screen cable
-    hide screen concert
+    hide screen salle
     show screen loges
     show screen gradin
     show screen party
@@ -29,11 +29,12 @@ label concert:
     
 
 label gradin:
-    scene gradin
+    scene bg gradin:
+        zoom 0.5
     hide screen micro
     hide screen cable
     hide screen gradin
-    show screen concert
+    show screen salle
     show screen loges
     show screen party
     if not mediator_recupere:
