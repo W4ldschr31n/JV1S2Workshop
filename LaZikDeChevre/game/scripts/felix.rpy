@@ -7,6 +7,8 @@ define guitrouge = Item ("guitare1","guitare1.png")
 define guitbleu = Item ("guitare2","guitare2.png")
 define guitvert = Item ("guitare3","guitare3.png")
 define cable = Item ("cable","cable.png")
+define mediator = Item ("mediator","mediator.png")
+define micro = Item ("micro","micro.png")
 
 screen choixguit:
     imagebutton:
@@ -79,26 +81,58 @@ screen gradin:
         ypos 500
         action Jump ("gradin")
 
-#screen party:
-#    textbutton "vers le concnert ":
-#        background "black"
-#        xpos 900
-#        ypos 100
-#        action Call ("validation")
+screen party:
+    textbutton "vers le concnert ":
+        background "black"
+        xpos 900
+        ypos 100
+        action Call ("validation")
 
-#label validation:
-
-
+label validation:
+    if all([cable_recupere, mediator_recupere, micro_recupere]):
+        hide screen concert
+        hide screen loges
+        hide screen gradin
+        narrateur "Le concert demarre"
+        jump concert_stade
+    else :
+        narrateur "Il vous manque des objet"
+        return
 
 screen cable:
     imagebutton:
         idle "cable.png"
-        action Call ("recup_inventory")
+        action Call ("recup_cable")
 
-label recup_inventory:
+screen mediator:
+    imagebutton:
+        idle "mediator.png"
+        action Call ("recup_mediator")
+
+screen micro:
+    imagebutton:
+        idle "micro.png"
+        action Call ("recup_micro")
+
+
+
+label recup_cable:
     $ guit_inventory.append(cable)
     $ cable_recupere = True
-    return
+    hide screen cable
+    jump loges
+
+label recup_mediator:
+    $ guit_inventory.append(mediator)
+    $ mediator_recupere = True
+    hide screen mediator
+    jump gradin
+
+label recup_micro:
+    $ guit_inventory.append(micro)
+    $ micro_recupere = True
+    hide screen micro
+    jump concert
 
 
     
