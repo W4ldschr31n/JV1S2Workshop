@@ -1,15 +1,15 @@
 label guitare:
-    scene maison
+    scene maison with fade
     show jean at left:
         zoom 0.3
-    show john at right:
+    show john happy at right:
         zoom 0.5
 
 
     narrateur "Nous retrouvons ensuite Jean et son père John dans leur salon. John est content d'apprendre la nouvelle, il se réjouit pour son fils. Jean en profite alors pour lui faire part de sa demande. Il voudrait une nouvelle guitare."
     show john worried:
         zoom 0.3
-    john "Une nouvelle guitare ?"
+    john "Tu veux une nouvelle guitare ? Mais celle que tu as est déjà très bien !"
     hide john
     hide jean
 
@@ -17,7 +17,12 @@ label guitare:
 
 
 label persuasion_john_succes:
+    show jean happy at left:
+        zoom 0.3
+    show john at right:
+        zoom 0.5
     narrateur "Jean a réussi à convaincre John de lui acheter une guitare, il va maintenant pouvoir choisir celle qu'il préfère."
+    john "Bon c'est d'accord ! Tu m'as convaincu bien joué. Tu la mérites amplement."
     scene black
     show journal at truecenter
     call screen choixguit
@@ -27,11 +32,12 @@ label persuasion_john_fail:
         zoom 0.3
     show john worried at left:
         zoom 0.3
+    john "Désolé mais c'est non. On verra plus tard ok? Quand j'aurai plus d'argent."
     narrateur "Jean n'aura pas su convaincre son père John de lui acheter une nouvelle guitare. Il continuera donc son aventure avec son premier instrument."
     jump festival
 
 label festival:
-    scene garage
+    scene garage with fade
     show jean at center:
         zoom 0.3
     narrateur "Quelques semaines après, nous retrouvons Jean chez lui, le matin même du festival. Le trac est présent mais ne semble pas égaler son excitation."
@@ -41,18 +47,19 @@ label festival:
         zoom 0.3
     jean "Je sais garder la tête froide, j'dois tenir ça de mon père et de ses fromages. J'veux surtout pas gâcher ma chance. Bon, vous pourriez me laisser le temps que je finisse de me préparer?"
     narrateur "Nous laissons donc Jean à ses occupations."
-    scene festival
+    scene festival with fade
+    narrateur "Pendant ce temps, nous décidons de nous rendre sur les lieux du festival." 
     show petrisseur angry at center:
         yalign 1
         zoom 0.5
 
-    narrateur "Pendant ce temps, nous décidons de nous rendre sur les lieux du festival où nous rencontrons l'une des têtes d'affiche: le Pétrisseur. Le boulange métalleux qui pétrit ses ennemis comme il pétrit la pâte."
+    narrateur "Nous rencontrons l'une des têtes d'affiche: le Pétrisseur. Le boulanger métalleux qui pétrit ses ennemis comme il pétrit la pâte."
     narrateur "C'est une nouvelle vedette qui remplit l'affiche depuis maintenant 2 ans sans laisser aucune place à ses concurrents."
     journaliste "Monsieur le Pétrisseur, que pensez-vous du nouvel artiste intégré à l'affiche, Jean? Il semblerait qu'il soit fils d'artisan, comme vous. Pensez-vous qu'il va réussir?"
     show petrisseur hautain
     petrisseur "Non. Il ne peut y en avoir qu'un, et ça sera moi."
     narrateur "C'est sur ces paroles rudes que nous laisse le Pétrisseur, un artiste doué, mais également bien connu pour son sale caractère."
-    hide petrisseur
+    scene festival with fade
     show jean at center:
         zoom 0.3
     narrateur "À la tombée de la nuit, nous retrouvons une fois de plus notre artiste en herbe en train de se préparer. Concentré, aucun détail ne lui échappe."
@@ -61,12 +68,14 @@ label festival:
     
     call minigame_corres
 
+    jump post_corres
+
 
 label post_corres :
 
-    scene festival
+    show jean rock
 
-    narrateur "{cps=25}Après tant de préparation et d'appréhension, ça y est, c'est le grand moment pour Jean qui monte sur scène."
+    narrateur "{cps=25}Après tant de préparation et d'appréhension, ça y est, c'est le grand moment pour Jean qui monte sur scène pour interpréter 'Ça rock fort'."
 
     default result_festival = 0
 
@@ -112,22 +121,27 @@ label post_corres :
         jump flashback 
 
     label losejeu4:
-        show petrisseur moqueur at center:
+        show jean rock sad at right
+        show petrisseur moqueur at left:
             zoom 0.3
         narrateur "{cps=25}Nous retrouvons les deux rivaux principaux de la scène en plein milieu d'un conflit explosif."
         petrisseur "{cps=25}Quelle honte tu nous fais ! T'aurais jamais du monter sur scène. Ta musique pue comme ton fromage."
-        show petrisseur hautain at left:
-            zoom 0.3
-        show jean sad at right:
+        show jean angry at right:
             zoom 0.3
         jean "{cps=25}Eh ! Tu me parles pas comme ça hein. Tout le monde peut se foirer à un moment ou un autre, et t'es pas différent !"
+        show petrisseur hautain at left:
+            zoom 0.3
         petrisseur "{cps=25}Je ne suis pas un raté comme toi ! J'ai réussi moi ! Voila ce qui arrive quand tu défies le roi, le PETRISSEUR."
-        narrateur "{cps=25}Après cette altercation, Jean semble déboussolé et demande à être seul. Nous nous éloignons donc, et retrouvons son rival. 
-        Le Pétrisseur rit aux éclats, fier de sa victoire: comme un adulte ayant battu un enfant à la course. "
-        petrisseur "{cps=25}Il était pas fait pour ça. Soit t'as le rock dans le sang, soit tu l'as pas. Faut vraiment que des gens arrêtent de prendre 
+        show jean sad
+        narrateur "{cps=25}Après cette altercation, Jean semble déboussolé et demande à être seul. Nous nous éloignons donc, et retrouvons son rival."
+        hide jean
+        show petrisseur at center
+        narrateur "Le Pétrisseur rit aux éclats, fier de sa victoire: comme un adulte ayant battu un enfant à la course. "
+        petrisseur "{cps=25}Il n'était pas fait pour ça. Soit t'as le rock dans le sang, soit tu l'as pas. Faut vraiment que des gens arrêtent de prendre 
         exemple sur moi en pensant qu'ils peuvent réussir: je suis l'exception, l'élu."
+        hide petrisseur
+        show jean sad at center:
+            zoom 0.3
         narrateur "{cps=25}C'est sur ces paroles que nous quittons la vedette afin de rejoindre Jean qui se tient quelques mètres plus loin, pensif, l'air abattu."
-        scene fromagerie
-        narrateur "{cps=25}C'est uniquement quelques mois plus tard que des nouvelles de Jean nous parviendrons. Nous le retrouvons aujourd'hui dans la fromagerie de son père."
-        show jean
         jump fin_rival
+        

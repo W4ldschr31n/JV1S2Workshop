@@ -30,7 +30,7 @@ label pre_stade:
     journaliste "{cps=25}Vous allez donc devoir défier le Pétrisseur, un challenge de haut niveau. Tout commence par un nom de scène, en avez-vous choisi un ? Comptez-vous garder 'Jean' ? "
     jean "{cps=25}J'avais déjà ma petite idée avant de commencer ouais: Rocklette. Vous en pensez quoi? J'trouve que ça claque un max."
     narrateur "{cps=25}Un nom qui inspire le respect et le fromage, voici l'identité choisie par Jean. Un premier pas vers ce duel entre rockstars."
-    scene garage
+    scene garage with fade
     show john happy at right:
         zoom 0.5
     show jean rock happy at center:
@@ -42,7 +42,7 @@ label pre_stade:
 label stade:
     scene bg stade with fade
     narrateur "{cps=25}Cela fait désormais 6 mois que avons laissé Jean, alias Rocklette, à son entraînement. Aux aguets, nous le suivions comme beaucoup de ses fans sur les réseaux sociaux." 
-    narrateur "À la suite du festival, la montée en puissance de notre nouvelle vedette fut presque instantanée. Une côte de popularité explosive et une inquiétude grandissante chez son plus grand adversaire: le Pétrisseur." 
+    narrateur "À la suite du festival, la montée en puissance de notre nouvelle vedette fut presque instantanée. Une cote de popularité explosive et une inquiétude grandissante chez son plus grand adversaire: le Pétrisseur." 
     narrateur "Durant ces derniers mois, lui aussi s'est beaucoup entrainé avec comme objectif non plus de conquérir la scène, mais d'écraser son ennemi juré." 
     narrateur "La foule se presse devant le stade de France, tout le monde attend le Choc des Artisans. Deux histoires similaires, pourtant un seul d'entre eux en sortira vainqueur."
     narrateur "Après avoir patienté plusieurs heures, nous retrouvons Jean dans les loges."
@@ -106,7 +106,12 @@ label concert_stade:
             jump evac
         
         label losejeu6:
+            show jean rock sad at left:
+                zoom 0.3
+            show petrisseur angry at right:
+                zoom 0.3
             narrateur "{cps=25}Sous la pluie de pâtisseries, Rocklette tombe à la renverse. La sécurité monte sur scène et emmène au loin le Pétrisseur, toujours fou de rage."
+            hide petrisseur
             narrateur "Un silence pesant règne parmi la foule, plus personne n'ose rien dire."
             narrateur "Les applaudissements reprennent alors petit à petit, non sans gêne, avant de reprendre définitivement comme si rien ne s'était passé."
 
@@ -115,11 +120,13 @@ label concert_stade:
 
     label losejeu5:
         scene bg stade
-        narrateur "{cps=25}Une déception, comment décrire autrement le ressenti des fans? Peut-être était-ce à cause du stress ou de l'angoisse, dans tous les cas la performance fut un échec."
-        narrateur " Des notes irrégulières jouées maladroitement. Mais qu'a donc fait Rocklette durant ces 6 mois?  Une éxécution: voila ce à quoi nous venons d'assister."
-        narrateur " Une défaite cuisante et la honte qui se lit sur le visage de celui que nous suivons depuis maintenant un an. Comment expliquer ce phénomène? Pouvons nous même l'expliquer?"
-        narrateur " Sans comprendre comment, nous sommes témoin d'une scène ahurissante: la foule qui était hésitante, entre applaudissements et huées, se met soudainement à lancer des projectiles 
-        sur la scène afin de manifester leur mécontentement. "
+        show jean rock sad at center:
+            zoom 0.3
+        narrateur "{cps=25}Une déception, comment décrire autrement le ressenti des fans de Rocklette ? Peut-être était-ce à cause du stress ou de l'angoisse, dans tous les cas la performance fut un échec."
+        narrateur " Des notes irrégulières jouées maladroitement. Mais qu'a donc fait Rocklette durant ces 6 mois?  Un massacre: voila ce à quoi nous venons d'assister."
+        narrateur " Une défaite cuisante et la honte qui se lit sur le visage de celui que nous suivons depuis maintenant un an. Comment expliquer ce phénomène? Pouvons nous même l'expliquer ?"
+        narrateur " Sans comprendre comment, nous sommes témoin d'une scène ahurissante: la foule qui était hésitante, entre applaudissements et huées, se met soudainement à lancer des projectiles fournis par le Pétrisseur afin de manifester leur mécontentement ! "
+        hide jean
         call minigame_dodge
         if win_minigame_dodge:
             jump winjeu7
@@ -128,37 +135,48 @@ label concert_stade:
 
 
     label winjeu7:
-        narrateur"{cps=25}Malgré sa performance, il semblerait qu'il reste de l'énergie à Rocklette. Suffisamment au moins pour esquiver les nombreux projectiles envoyés par les fans mécontents. 
-        La star est forcée d'être évacuée tandis que la foule réclame un remboursement. Nous quittons également le stade, toujours choqués par la scène à laquelle nous venons d'assister."
+        show jean angry at center:
+            zoom 0.3
+        narrateur"{cps=25}Malgré sa piètre performance, il semblerait qu'il reste de l'énergie à Rocklette. Suffisamment au moins pour esquiver les nombreux projectiles envoyés par les fans mécontents." 
+        narrateur "La star est forcée d'être évacuée tandis que la foule réclame un remboursement. Nous quittons également le stade, toujours choqués par la scène à laquelle nous venons d'assister."
         jump chute
 
     label losejeu7:
+        show jean sad at center:
+            zoom 0.3
         narrateur "{cps=25}Que ce soit en musique ou en agilité, il semblerait que ce ne soit pas un bon jour pour Rocklette. Sous la pluie de projectiles, la star tombe à la renverse, 
         toujours sous les insultes du public." 
         narrateur "La sécurité arrive afin d'évacuer notre rockstar dont la montée fut aussi spectaculaire que la chute. La foule hurle, réclamant un remboursement." 
+        hide jean
         narrateur "Nous quittons également le stade, toujours choqués par la scène à laquelle nous venons d'assister."
         jump chute
 
 label chute:
+    scene black
     narrateur "{cps=25}Les jours passent, mais le sujet reste le même. Partout sur les réseaux, tout le monde ne parle que d'une seule chose: la chute de Rocklette. Une ascension percutante, 
     tout comme la descente." 
-    narrateur "Personne ne semble comprendre ce qu'il s'est réellement passé lors de cet affrontement. Sans surprise, le vainqueur désigné fut le Pétrisseur."
+    scene bg boulangerie
+    show petrisseur hautain at center:
+        zoom 0.3
+    narrateur "Personne ne semble comprendre ce qu'il s'est réellement passé lors de cet affrontement. Sans surprise, le Pétrisseur fut vivement acclamé et désigné comme la prochaine rockstar internationale."
+    show petrisseur moqueur
     narrateur "Il prit d'ailleurs un malin plaisir à s'exprimer sur sa réussite tout en expliquant que la défaite de Rocklette était inévitable. Notre jeune star disparue alors des réseaux sociaux, 
     sans aucune explication."
+    scene bg salle interview with fade
     narrateur "C'est seulement quelques semaines plus tard que John nous autorisa une brève interview."
+    show john assis at center:
+        zoom 0.4
     journaliste"{cps=25}Bonjour John, merci d'avoir accepté notre invitation. Cela fait quelques semaines maintenant depuis l'agression au Stade de France, comment le vivez-vous?"
-    show john angry at center:
-        zoom 0.4
-    john "{cps=25}Comment je le vis moi? Qu'est-ce qu'on s'en fout ! C'est Jean l'important !! Il ne sort plus de sa chambre ! Il ne fait plus rien et vous me demandez comment je vais ?"
-    journaliste "{cps=25}Je vous demande pardon...j'ai été maladroit. Ce n'est pas ce que je voulais dire."
-    show john sad at center:
-        zoom 0.4
-    john "{cps=25}Je sais, pardonnez-moi, je suis vraiment fatigué...Je ne sais plus quoi faire. Ca fait des semaines et rien ne marche. Je sais qu'il a besoin de temps, 
-    mais il est vraiment au plus mal et ça me brise le cœur. Il voit psy maintenant qui lui file des médocs mais j'ai l'impression que ce n'est pas suffisant."
+    show john assis angry
+    john "{cps=25}Comment je le vis moi? Qu'est-ce qu'on s'en fiche ! C'est Jean l'important ! Il ne sort plus de sa chambre. Il ne fait plus rien et vous me demandez comment moi je vais ?"
+    journaliste "{cps=25}Pardon, la question était maladroite. Ce n'est pas ce que je voulais dire."
+    show john assis sad
+    john "{cps=25}Je sais, pardonnez-moi, je suis vraiment fatigué... Je ne sais plus quoi faire. Ca fait des semaines que je fais tout mon possible et rien ne marche. Je sais qu'il a besoin de temps, 
+    mais il est vraiment au plus mal et ça me brise le cœur."
+    john "Il voit un thérapeute pour l'aider à surmonter son traumatisme mais j'ai l'impression que ce n'est pas suffisant."
     journaliste "{cps=25}Je vois. Nous sommes de tout cœur avec vous. Est-ce qu'on peut faire quelque chose pour vous aider? "
-    show john at center:
-        zoom 0.4
-    john "{cps=25}Arrêter d'en parler. Jean a besoin qu'on l'oublie quelques temps. Des articles circulent déjà sur sa dépression, il n'a pas besoin qu'on en rajoute."
+    show john assis
+    john "{cps=25}Arrêter d'en parler. Jean a besoin qu'on l'oublie quelques temps. Des articles circulent déjà sur sa descente aux enfers, il n'a pas besoin qu'on en rajoute."
     jump end_bad
 
 label evac:

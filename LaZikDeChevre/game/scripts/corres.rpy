@@ -307,13 +307,13 @@ label minigame_corres:
 label win_corres:
     show jean happy at center:
         zoom 0.3
-    narrateur "Jean ne succombe pas au stress et réussit à installer son matériel à temps. Il peut commencer sa performance avec confiance."
+    narrateur "Jean surmonte le stress et réussit à installer son matériel à temps. Il peut commencer sa performance avec confiance."
     $ resultat_corres = True
     return
 
 label lose_corres:
     show jean sad at center:
         zoom 0.3
-    narrateur "Jean surmonte le stress, il ne réussit pas à installer son matériel à temps. Nous espérons que cela n'impactera pas trop sa perfomance."
+    narrateur "Jean succombe au stress, il ne réussit pas à installer son matériel à temps. Nous espérons que cela n'impactera pas trop sa perfomance."
     $ resultat_corres = False
     return

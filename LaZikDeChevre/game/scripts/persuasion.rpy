@@ -42,7 +42,7 @@ label persuasion(pt, character, character_image):
     show expression character_image as char_im:
         xalign 0.5
         zoom 0.5
-    character_to_persuade "Je vous écoute"
+    character_to_persuade "J'écoute"
 
     jump persuasion_loop
 

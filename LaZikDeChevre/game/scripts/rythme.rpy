@@ -44,6 +44,7 @@ init python:
             if sprite.x > X_GUITAR + 32:
                 if sprite.isGood:
                     store.misses += 1
+                    renpy.sound.play("GUITAR_MISS.ogg")
                 else:
                     store.hits += 1
                 sprite.show.destroy()

@@ -13,11 +13,11 @@ label persuasion_gerant:
         if resultat_rythme_garage >= 3:
             contextual_choice = PersuasionChoice("Montrer la vidéo de sa performance", "Tu as un talent incroyable !", 100, END_BRANCH)
         elif resultat_rythme_garage >= 2:
-            contextual_choice = PersuasionChoice("Montrer la vidéo de sa performance", "Pas mal pour un débutant", 10, 0)
+            contextual_choice = PersuasionChoice("Montrer la vidéo de sa performance", "Pas mal pour un débutant.", 10, 0)
         else:
-            contextual_choice = PersuasionChoice("Montrer la vidéo de sa performance", "Euh... non merci", -100, END_BRANCH)
+            contextual_choice = PersuasionChoice("Montrer la vidéo de sa performance", "Euh... non merci.", -100, END_BRANCH)
         persuasion_tree_gerant.contextual_choice = contextual_choice
-    call persuasion(persuasion_tree_gerant, g, "gerant")
+    call persuasion(persuasion_tree_gerant, gerant, "gerant")
     if persuasion_win:
         jump persuasion_gerant_succes
     else:

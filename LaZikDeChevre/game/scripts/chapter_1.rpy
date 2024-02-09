@@ -14,7 +14,7 @@ label chapter_1:
     narrateur "{cps=25}En France, des milliers d'artisans produisent chaque jour un produit emblématique de la culture gastronomique de notre pays, qui accompagne presque chaque repas des français: le fromage."
     narrateur "{cps=25}Chaque région possède ses spécialités vendues dans des fromageries, et nous allons suivre aujourd'hui l'une d'entre elles."
 
-    scene fromagerie
+    scene fromagerie with fade
     narrateur "{cps=25}Dans cette petite boutique du Morbihan, les amateurs de fromage sont comblés. Coulommiers, Pont-l'Évêque, ou bien Roquefort, toutes les perles de notre terroir sont réunies sur un plateau."
     narrateur "{cps=25}Une vie de senteurs, bien appréciée de John, fromager depuis 20 ans."
     show john at left:
@@ -57,7 +57,7 @@ label winjeu1:
         zoom 0.3
     narrateur "{cps=25}Avec un talent indéniable pour la guitare, Jean possède les qualités pour percer dans le milieu du rock."
     narrateur "{cps=25}Mais en a-t-il l'étoffe?"
-    narrateur "{cps=25}Un rêve que beaucoup de personnes abandonne, mais Jean semble déterminé à ne pas laisser tomber."
+    narrateur "{cps=25}Un rêve que beaucoup de personnes abandonnent, mais Jean semble déterminé à ne pas laisser tomber."
     jean "{cps=25}J'en rêve depuis que je suis tout petit. C'est vraiment quelque chose qui me tient à coeur, et j'suis pas prêt d'abandonner."
     jump interview
 label losejeu1:

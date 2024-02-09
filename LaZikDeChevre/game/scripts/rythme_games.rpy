@@ -15,7 +15,6 @@ default resultat_rythme_garage = 0
 label minigame_rythme_garage:
     call minigame_rythme(sequence_rythme_garage, 0, speedRythme1)
     $ resultat_rythme_garage = score_minigame_rythme
-    "Chanson terminée"
     return
 
 define sequence_rythme_bar = [
@@ -40,17 +39,17 @@ label minigame_rythme_bar:
 
 define sequence_rythme_rue = [
     (note1, 1, frequenceMedium, True),
-    (note1, 3, frequenceMedium, True),
-    (note1, 3, frequenceMedium, True),
-    (note1, 3, frequenceMedium, True),
-    (note1, 4, frequenceMedium, True),
-    (note1, 3, frequenceMedium, True),
-    (note1, 3, frequenceSlow, True),
-    (note1, 4, frequenceFast, True),
+    (note2, 3, frequenceMedium, True),
+    (note2, 3, frequenceMedium, True),
+    (note2, 3, frequenceMedium, True),
+    (note3, 4, frequenceMedium, True),
+    (note2, 3, frequenceMedium, True),
+    (note2, 3, frequenceSlow, True),
+    (note3, 4, frequenceFast, True),
     (note1, 5, frequenceFast, True),
     (note1, 5, frequenceMedium, True),
     (note1, 5, frequenceMedium, True),
-    (note1, 6, frequenceMedium, True),
+    (note2, 6, frequenceMedium, True),
     (note1, 5, frequenceMedium, True),
 ]
 default resultat_rythme_rue = 0

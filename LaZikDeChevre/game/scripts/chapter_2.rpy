@@ -25,11 +25,11 @@ label interview:
 
 label bar:
     if resultat_rythme_garage >= 3:
-        scene bg bar grand sombre
+        scene bg bar grand sombre with fade
     elif resultat_rythme_garage >= 2:
-        scene bg bar moyen sombre
+        scene bg bar moyen sombre with fade
     else:
-        scene bg bar petit sombre
+        scene bg bar petit sombre with fade
     show gerant at left:
         zoom 0.5
     show jean trepigne at right:
@@ -54,8 +54,8 @@ label prestabar:
     jean "{cps=25}Je suis content qu'il aie accepté, mais la vraie épreuve commence maintenant. J'dois pas me laisser emporter."
     narrateur "{cps=25}Jean va maintenant devoir se préparer pour sa prochaine performance, sa première devant un vrai public. Il ne cache pas son anxiété."
     hide jean
-    scene maison
-    narrateur "{cps=25}Nous sommes dans la maison de John et Jean, nous assistons à un moment de motivation paternelle."
+    scene maison with fade
+    narrateur "{cps=25}Nous sommes de retour un peu plus tard dans la maison de John et Jean, nous assistons à un moment de motivation paternelle."
     show jean sad at right:
         zoom 0.3
     show john happy at left:
@@ -89,7 +89,8 @@ label prestabar:
         zoom 0.2
 
     narrateur "{cps=25}Nous retrouvons Jean au bar, le soir du concert. Après des journées d'entrainement intensif, il est fin prêt à en découdre devant le public qui l'attend."
-    narrateur "En vérité, le public ne l'attend pas vraiment, mais Jean en est persuadé... Nous l'apercevons au loin sur scène, en train de se préparer. Les lumières s'éteignent et le show commence."
+    narrateur "En vérité, le public ne l'attend pas vraiment, mais Jean en est persuadé... Nous l'apercevons au loin sur scène, en train de se préparer."
+    narrateur "Les lumières s'éteignent et le show commence. Jean va jouer 'Tu Brie dans ma vie'."
 
     #rythme bar
     call minigame_rythme_bar
@@ -103,13 +104,13 @@ label prestabar:
 
     label winjeu2:
         show jean rock happy
-        narrateur "{cps=25}Un show incroyable que nous a offert Jean ce soir. Le commencement d'un rêve, la concrétisation d'une volonté, et peut être le début d'une carrière. 
-        De notre place, nous apercevons Jean qui s'entretient avec une autre personne. Mais qui est-elle? Un fois le show terminé, Jean finit par nous rejoindre."
+        narrateur "{cps=25}Un show incroyable que nous a offert Jean ce soir. Le commencement d'un rêve, la concrétisation d'une volonté, et peut être le début d'une carrière. "
+        narrateur "De notre place, nous apercevons Jean qui s'entretient avec une autre personne. Mais qui est-elle ? Un fois le show terminé, Jean finit par nous rejoindre."
         show jean happy at center:
             zoom 0.3
         jean "{cps=25}Vous devinerez jamais qui vient d'me parler ! L'organisateur du festival de rock là, vous savez, Rockbihan. Eh bien il vient tout juste de m'inviter à jouer sur scène !"
         journaliste "{cps=25}La chance semble enfin vous sourire. Nous allons vous suivre de près désormais."
-        narrateur "{cps=25}Jean, l'exemple prouvant que la persévérance peut se montrer payante. En espérant que ce festival soit tout-autant une réussite pour lui."
+        narrateur "{cps=25}Jean, l'exemple prouvant que la persévérance peut se montrer payante. En espérant que ce festival soit tout autant une réussite pour lui."
         jump guitare
 
     label losejeu2:
@@ -138,17 +139,19 @@ label rue:
     show gerant angry at left:
         zoom 0.5
     gerant "{cps=25}Très drôle ! Aller, retourne jouer ailleurs. Tu me fais perdre mon temps."
-    jean "{cps=25}Mais..c'est mon rêve ! Vous allez vraiment me refuser ça comme ça ?!" 
+    jean "{cps=25}Mais... c'est mon rêve ! Vous allez vraiment me refuser ça comme ça ?!" 
     gerant "{cps=25}Oui."
     hide jean
-    narrateur "{cps=25}C'est sur ces dernières paroles que le gérant expulsa Jean. Désemparé, celui-ci refusa de rentrer chez lui. Nous laissant seul sur le trottoir, sans nouvelles depuis maintenant des semaines."
-    scene bg salle interview
-    narrateur "{cps=25}C'était sans compter sur l'intervention de son père, à qui nous avons enfin pu parler, mais peut-être trop tard."
+    narrateur "{cps=25}C'est sur ces dernières paroles que le gérant expulsa Jean."
+    scene bg rue petit
+    narrateur "Désemparé, celui-ci refusa de rentrer chez lui. Nous laissant seul sur le trottoir, nous n'aurons pas de nouvelle de lui pendant une semaine."
+    scene bg salle interview with fade
+    narrateur "{cps=25}Nous réussissons tout de même à entrer en contact avec son père, qui nous a accorde un bref entretien."
 
     show john assis at center:
         zoom 0.5
 
-    john "{cps=25}Ah..c'est vrai que ça a été très difficile pour lui. J'le vois plus. Plus de discussion. Boh, ça lui passera bien un jour. Il est tenace le ptiot."
+    john "{cps=25}Ah... c'est vrai que ça a été très difficile pour lui. Je n'le vois plus. Plus de discussion. Boh, ça lui passera bien un jour. Il est tenace le ptiot."
     show john assis sad
     narrateur "{cps=25}Mais en prononçant ses mots, John lui-même ne semblait pas convaincu. Nous décidons alors de le laisser seul et d'aller prendre l'air."
     
@@ -157,9 +160,9 @@ label rue:
         scene bg rue grand
     else:
         scene bg rue petit
-    show jean at center:
-        zoom 0.5
-    narrateur "{cps=25}Quelle surprise quand nous découvrons Jean en plein concert de rue. Nous décidons de le laisser finir avant d'aller à sa rencontre."
+    show jean rock at center:
+        zoom 0.3
+    narrateur "{cps=25}Quelle surprise quand en sortant dans la rue, nous découvrons Jean en plein concert public. Nous décidons de le laisser finir avant d'aller à sa rencontre. Il joue sa chanson 'Ne Comté pas sur moi'."
     hide jean
     #jeux de rythme rue
     call minigame_rythme_rue
@@ -171,18 +174,24 @@ label rue:
         jump losejeu3
 
     label winjeu3:
-        narrateur "{cps=25}Une performance formidable que nous a proposé Jean, nous dévoilant son plein potentiel. Une foule en délire, les yeux scintillants: le début d'un rêve qui se concrétise."
-        show jean at right:
-            zoom 0.5
-        narrateur "{cps=25}Nous retrouvons Jean quelques temps après sa prestation, avec la mine radieuse. Jean, que ressentez-vous en ce moment?"
+        show jean rock happy at center:
+            zoom 0.3
+        narrateur "{cps=25}Jean, nous dévoile son plein potentiel. Une foule en délire, les yeux scintillants: le début d'un rêve qui se concrétise."
+        show jean at right
+        narrateur "{cps=25}Nous retrouvons Jean quelques temps après sa prestation, avec la mine radieuse."
+        journaliste "Jean, que ressentez-vous en ce moment?"
         jean "{cps=25}C'était magique. Je pourrais même pas vous dire ce que j'ai ressenti, j'arrive toujours pas à y croire ! En plus, un des organisateurs du festival Rockbihan m'a invité ! 
         Faut à tout prix que je l'annonce à mon père."
         journaliste "{cps=25}La chance semble enfin vous sourire. Nous allons vous suivre de près désormais."
-        narrateur "{cps=25}Jean nous montre ici que la persévérance peut se montrer payante. En espérant que ce festival soit tout-autant une réussite pour lui."
+        show jean happy
+        narrateur "{cps=25}Jean nous montre ici que la persévérance peut se montrer payante. En espérant que ce festival soit tout autant une réussite pour lui."
         jump guitare
 
     label losejeu3:
+        show jean rock sad at center:
+            zoom 0.2
         narrateur "{cps=25}Un fiasco, comment décrire autrement l'évènement dont nous avons été témoin."
+        narrateur "Jean, consumé par la haine et la déception, s'empresse de ranger ses affaires en pestant avant de nous adresser un dernier regard et de s'éloigner."
         jump findrogue
 
 

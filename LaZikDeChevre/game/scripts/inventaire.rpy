@@ -62,22 +62,26 @@ screen choixguit:
 label choix1:
     $ guit_inventory.pop()
     $ guit_inventory.append(guitrouge)
+    narrateur "Une guitare haute en couleurs, qui aidera Jean à se démarquer sur scène."
     jump festival
 
 label choix2:
     $ guit_inventory.pop()
     $ guit_inventory.append(guitbleu)
+    narrateur "Une guitare d'apparence classique, pour un artiste au parcours hors du commun."
     jump festival
     
 
 label choix3:
     $ guit_inventory.pop()
     $ guit_inventory.append(guitvert)
+    narrateur "Une guitare onéreuse, mais quand on aime, rien n'a de prix."
     jump festival
 
 label choix4:
     $ guit_inventory.pop()
     $ guit_inventory.append(guitviolet)
+    narrateur "La guitare donc Jean rêve depuis des mois."
     jump festival
     
 
@@ -136,11 +140,11 @@ label validation:
         show petrisseur hautain at center:
             zoom 0.2
         narrateur "Ces quelques minutes semblent avoir été jouées en quelques secondes. Des fans en délire, la tête résonnante : le niveau entre Rockbihan et ce soir n'est clairement plus le même." 
-        narrateur "Une progression impressionnante qui témoigne de la rage de vaincre de la fameuse rockstar qui conquit les scènes depuis plus de deux ans et qui ne semble pas prête de s'arrêter. "
+        narrateur "Une progression impressionnante qui témoigne de la rage de vaincre de la fameuse rockstar qui conquiert les scènes depuis plus de deux ans et qui ne semble pas prête de s'arrêter. "
         hide petrisseur
         show jean rock at center:
             zoom 0.3
-        narrateur "À peine avons-nous eu le temps de souffler que Rocklette entre en scène confiant, et sans un mot entame sa prestation: un morceau intitulé 'Rockblechon'."
+        narrateur "À peine avons-nous eu le temps de souffler que Rocklette entre en scène confiant, et sans un mot entame sa prestation: un morceau intitulé 'Rockblechon', tandis que les fans Pétrisseur tentent de le déconcentrer en huant."
         jump concert_stade
     else :
         narrateur "Il vous manque des objets, il vous faut un câble, un médiator et un micro."
