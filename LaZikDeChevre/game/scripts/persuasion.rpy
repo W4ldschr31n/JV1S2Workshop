@@ -48,7 +48,7 @@ label persuasion(pt, character, character_image):
 
 label persuasion_loop:
     $ next_choices = persuasion_tree.get_choices()
-    call .choice_persuasion(next_choices)
+    call .choice_persuasion(next_choices) from _call_persuasion_loop_choice_persuasion
     if persuasion_tree.has_choices():
         jump persuasion_loop
     else:

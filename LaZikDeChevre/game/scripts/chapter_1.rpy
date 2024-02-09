@@ -44,7 +44,7 @@ label chapter_1:
     journaliste '{cps=25}Pour cette présentation, Jean a choisi de nous jouer un morceau de sa composition intitulé "liberté fromagère".'
 
     #premier mini jeux (tuto rythme)
-    call minigame_rythme_garage
+    call minigame_rythme_garage from _call_minigame_rythme_garage
 
     $ wingame = resultat_rythme_garage >= 2
     if wingame:

@@ -93,7 +93,7 @@ label prestabar:
     narrateur "Les lumières s'éteignent et le show commence. Jean va jouer 'Tu Brie dans ma vie'."
 
     #rythme bar
-    call minigame_rythme_bar
+    call minigame_rythme_bar from _call_minigame_rythme_bar
 
     $ wingame = resultat_rythme_bar >= 2
     if wingame:
@@ -165,7 +165,7 @@ label rue:
     narrateur "{cps=25}Quelle surprise quand en sortant dans la rue, nous découvrons Jean en plein concert public. Nous décidons de le laisser finir avant d'aller à sa rencontre. Il joue sa chanson 'Ne Comté pas sur moi'."
     hide jean
     #jeux de rythme rue
-    call minigame_rythme_rue
+    call minigame_rythme_rue from _call_minigame_rythme_rue
 
     $ wingame = resultat_rythme_rue >= 2
     if wingame:

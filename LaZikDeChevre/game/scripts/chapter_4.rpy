@@ -61,11 +61,14 @@ label stade:
     jump vers_loges
 
 label concert_stade:
-    scene bg stade
+    scene bg_scene
+    show jean rock at center:
+        zoom 0.3
+    narrateur "À peine avons-nous eu le temps de souffler que Rocklette entre en scène confiant, et sans un mot entame sa prestation: un morceau intitulé 'Rockblechon', tandis que les fans Pétrisseur tentent de le déconcentrer en huant."
 
     default result_stade = 0
-
-    call minigame_rythme_stade
+    "Le Pétrisseur envoie à Jean des fausses notes, attention à ne pas les jouer !"
+    call minigame_rythme_stade from _call_minigame_rythme_stade
     $ result_stade = score_minigame_rythme
 
     $ guit_inventory.pop()
@@ -91,7 +94,7 @@ label concert_stade:
             narrateur "Toujours sur la scène, le Pétrisseur, en proie à la rage, fonce sur Rocklette et lui lance des projectiles: une scène ahurissante que personne n'aurait pu prédire."
             hide jean
             hide petrisseur
-            call minigame_dodge
+            call minigame_dodge from _call_minigame_dodge
             if win_minigame_dodge:
                 jump winjeu6
             else:
@@ -127,7 +130,7 @@ label concert_stade:
         narrateur " Une défaite cuisante et la honte qui se lit sur le visage de celui que nous suivons depuis maintenant un an. Comment expliquer ce phénomène? Pouvons nous même l'expliquer ?"
         narrateur " Sans comprendre comment, nous sommes témoin d'une scène ahurissante: la foule qui était hésitante, entre applaudissements et huées, se met soudainement à lancer des projectiles fournis par le Pétrisseur afin de manifester leur mécontentement ! "
         hide jean
-        call minigame_dodge
+        call minigame_dodge from _call_minigame_dodge_1
         if win_minigame_dodge:
             jump winjeu7
         else:

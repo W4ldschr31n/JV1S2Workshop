@@ -111,7 +111,7 @@ label minigame_rythme(sequence, difficulte, speedRythme):
     hide screen screen_minigame_rythme
     hide _
     $ accuracy = round(hits* 100 / (hits+misses), 2)
-    call fin_rythm(accuracy, difficulte)
+    call fin_rythm(accuracy, difficulte) from _call_fin_rythm
 
     return
 

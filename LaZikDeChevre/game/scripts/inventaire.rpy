@@ -81,7 +81,7 @@ label choix3:
 label choix4:
     $ guit_inventory.pop()
     $ guit_inventory.append(guitviolet)
-    narrateur "La guitare donc Jean rêve depuis des mois."
+    narrateur "La guitare dont Jean rêve depuis des mois."
     jump festival
     
 
@@ -136,15 +136,18 @@ label validation:
         hide screen loges
         hide screen gradin
         hide screen party
+        scene bg stade
         narrateur "La nuit tombe, l'excitation est à son paroxysme: la foule ne tient plus en place. Enfin, la première star monte sur scène: le Pétrisseur lance les hostilités."
         show petrisseur hautain at center:
             zoom 0.2
-        narrateur "Ces quelques minutes semblent avoir été jouées en quelques secondes. Des fans en délire, la tête résonnante : le niveau entre Rockbihan et ce soir n'est clairement plus le même." 
+        narrateur "Moi c'est le Pétrisseur, je suis ici pour vous en mettre plein les oreilles avec ma nouvelle musique: 'Éclair au spectacle' !"
+        show petrisseur angry
+        narrateur "Le pétrisseur enchaîne les notes à une vitesse folle, son talent semble inégalable."
+        narrateur "Les quelques minutes de sa prestation semblent avoir été jouées en quelques secondes. Des fans en délire, la tête résonnante : le niveau entre Rockbihan et ce soir n'est clairement plus le même."
+        show petrisseur hautain
         narrateur "Une progression impressionnante qui témoigne de la rage de vaincre de la fameuse rockstar qui conquiert les scènes depuis plus de deux ans et qui ne semble pas prête de s'arrêter. "
         hide petrisseur
-        show jean rock at center:
-            zoom 0.3
-        narrateur "À peine avons-nous eu le temps de souffler que Rocklette entre en scène confiant, et sans un mot entame sa prestation: un morceau intitulé 'Rockblechon', tandis que les fans Pétrisseur tentent de le déconcentrer en huant."
+
         jump concert_stade
     else :
         narrateur "Il vous manque des objets, il vous faut un câble, un médiator et un micro."

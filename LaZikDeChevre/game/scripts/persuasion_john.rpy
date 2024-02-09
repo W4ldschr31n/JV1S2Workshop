@@ -11,7 +11,7 @@ default persuasion_tree_john = PersuasionTree(
 label persuasion_john:
     $ contextual_choice = PersuasionChoice("Prendre par les sentiments", "C'est vrai que c'est ton rêve", 10, END_BRANCH)
     $ persuasion_tree_john.contextual_choice = contextual_choice
-    call persuasion(persuasion_tree_john, john, "john")
+    call persuasion(persuasion_tree_john, john, "john") from _call_persuasion_1
     if persuasion_win:
         jump persuasion_john_succes
     else:

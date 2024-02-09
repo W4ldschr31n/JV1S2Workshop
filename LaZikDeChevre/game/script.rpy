@@ -7,13 +7,13 @@
 label start:
     menu optional_name:
         "Que voulez-vous faire?"
-        "Jouer au chapitre 1":
+        "Jouer depuis le début de l'histore":
             jump chapter_1 
-        "Jouer au chapitre 2":
+        "Jouer depuis le milieu de l'histoire":
             $ guit_inventory  = [guitarebase]
             show screen inventory
             jump guitare
-        "Jouer au chapitre 3":
+        "Jouer la fin de l'histoire":
             $ guit_inventory  = [guitbleu]
             show screen inventory
             jump pre_stade

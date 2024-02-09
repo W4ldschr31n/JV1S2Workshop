@@ -66,7 +66,7 @@ label festival:
     show jean angry
     jean "L'équipe technique a oublié de préparer mon passage, je vais devoir brancher tous mes câbles moi-même."
     
-    call minigame_corres
+    call minigame_corres from _call_minigame_corres
 
     jump post_corres
 
@@ -79,7 +79,7 @@ label post_corres :
 
     default result_festival = 0
 
-    call minigame_rythme_festival
+    call minigame_rythme_festival from _call_minigame_rythme_festival
     $ result_festival = score_minigame_rythme
 
 

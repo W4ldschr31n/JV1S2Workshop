@@ -8,7 +8,7 @@ default persuasion_tree_test = PersuasionTree(
 
 
 label persuasion_test:
-    call persuasion(persuasion_tree_test, g, "gerant")
+    call persuasion(persuasion_tree_test, g, "gerant") from _call_persuasion_2
     if persuasion_win:
         jump persuasion_test_succes
     else:

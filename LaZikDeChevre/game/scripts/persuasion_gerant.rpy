@@ -17,7 +17,7 @@ label persuasion_gerant:
         else:
             contextual_choice = PersuasionChoice("Montrer la vidéo de sa performance", "Euh... non merci.", -100, END_BRANCH)
         persuasion_tree_gerant.contextual_choice = contextual_choice
-    call persuasion(persuasion_tree_gerant, gerant, "gerant")
+    call persuasion(persuasion_tree_gerant, gerant, "gerant") from _call_persuasion
     if persuasion_win:
         jump persuasion_gerant_succes
     else:

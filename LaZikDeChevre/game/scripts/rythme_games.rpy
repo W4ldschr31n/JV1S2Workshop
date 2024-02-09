@@ -13,7 +13,7 @@ define sequence_rythme_garage = [
 ]
 default resultat_rythme_garage = 0
 label minigame_rythme_garage:
-    call minigame_rythme(sequence_rythme_garage, 0, speedRythme1)
+    call minigame_rythme(sequence_rythme_garage, 0, speedRythme1) from _call_minigame_rythme
     $ resultat_rythme_garage = score_minigame_rythme
     return
 
@@ -33,7 +33,7 @@ define sequence_rythme_bar = [
 ]
 default resultat_rythme_bar = 0
 label minigame_rythme_bar:
-    call minigame_rythme(sequence_rythme_bar, 0, speedRythme2)
+    call minigame_rythme(sequence_rythme_bar, 0, speedRythme2) from _call_minigame_rythme_1
     $ resultat_rythme_bar = score_minigame_rythme
     return
 
@@ -54,7 +54,7 @@ define sequence_rythme_rue = [
 ]
 default resultat_rythme_rue = 0
 label minigame_rythme_rue:
-    call minigame_rythme(sequence_rythme_rue, 0, speedRythme2)
+    call minigame_rythme(sequence_rythme_rue, 0, speedRythme2) from _call_minigame_rythme_2
     $ resultat_rythme_rue = score_minigame_rythme
     return
 
@@ -81,46 +81,46 @@ define sequence_rythme_festival = [
 default resultat_rythme_festival = 0
 label minigame_rythme_festival:
     $ festival_difficulte = 0 if resultat_corres else 2
-    call minigame_rythme(sequence_rythme_festival, 0, speedRythme2)
+    call minigame_rythme(sequence_rythme_festival, 0, speedRythme2) from _call_minigame_rythme_3
     $ resultat_rythme_festival = score_minigame_rythme
     return
 
 define sequence_rythme_stade = [
     (note1, 1, frequenceFast, True),
-    (note1, 4, frequenceFast, True),
-    (note1, 7, frequenceFast, True),
-    (note1, 4, frequenceFast, True),
+    (note2, 4, frequenceFast, True),
+    (note3, 7, frequenceFast, True),
+    (note2, 4, frequenceFast, True),
     (note4, 4, frequenceFast, False),
-    (note1, 4, frequenceFast, True),
+    (note2, 4, frequenceFast, True),
     (note1, 3, frequenceFast, True),
     (note4, 1, frequenceMedium, False),
     (note1, 1, frequenceFast, True),
-    (note1, 4, frequenceFast, True),
-    (note1, 7, frequenceFast, True),
-    (note1, 4, frequenceFast, True),
+    (note2, 4, frequenceFast, True),
+    (note3, 7, frequenceFast, True),
+    (note2, 4, frequenceFast, True),
     (note4, 4, frequenceFast, False),
-    (note1, 8, frequenceFast, True),
-    (note1, 7, frequenceFast, True),
+    (note3, 8, frequenceFast, True),
+    (note2, 7, frequenceFast, True),
 
     (note1, 1, frequenceSlow, True),
-    (note1, 4, frequenceFast, True),
-    (note1, 7, frequenceFast, True),
-    (note1, 4, frequenceFast, True),
+    (note2, 4, frequenceFast, True),
+    (note3, 7, frequenceFast, True),
+    (note2, 4, frequenceFast, True),
     (note4, 4, frequenceFast, False),
-    (note1, 4, frequenceFast, True),
+    (note2, 4, frequenceFast, True),
     (note1, 3, frequenceFast, True),
     (note4, 1, frequenceMedium, False),
     (note1, 1, frequenceFast, True),
-    (note1, 4, frequenceFast, True),
-    (note1, 7, frequenceFast, True),
-    (note1, 4, frequenceFast, True),
+    (note2, 4, frequenceFast, True),
+    (note3, 7, frequenceFast, True),
+    (note2, 4, frequenceFast, True),
     (note4, 4, frequenceFast, False),
-    (note1, 8, frequenceFast, True),
-    (note1, 7, frequenceFast, True),
+    (note3, 8, frequenceFast, True),
+    (note2, 7, frequenceFast, True),
 ]
 
 default resultat_rythme_stade = 0
 label minigame_rythme_stade:
-    call minigame_rythme(sequence_rythme_stade, 0, speedRythme3)
+    call minigame_rythme(sequence_rythme_stade, 0, speedRythme3) from _call_minigame_rythme_4
     $ resultat_rythme_stade = score_minigame_rythme
     return
